@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
-import logoImg from './assets/logo.png';
+import {logo} from "./assets/index";
+import {PreloadScene, MainScene, TutorialScene} from "./scenes/index";
 
 class MyGame extends Phaser.Scene
 {
@@ -10,7 +11,7 @@ class MyGame extends Phaser.Scene
 
     preload ()
     {
-        this.load.image('logo', logoImg);
+        this.load.image('logo', logo);
     }
       
     create ()
@@ -28,12 +29,28 @@ class MyGame extends Phaser.Scene
     }
 }
 
-const config = {
+var config = {
+    // type of display (webGL or canvas)
     type: Phaser.AUTO,
-    parent: 'phaser-example',
+    // size of display (resolution)
     width: 800,
     height: 600,
-    scene: MyGame
+    // place game into div called "gameArea" and center in middle of screen
+    scale: {
+        parent: "gameArea",
+        autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
+    },
+    // make call to arcade physics system 
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: {y : 300},
+            debug: false
+        }
+    },
+
+    scene: [TutorialScene]
 };
 
-const game = new Phaser.Game(config);
+// this line is what 'runs' the game 
+var game = new Phaser.Game(config);
