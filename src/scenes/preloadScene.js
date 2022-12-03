@@ -1,4 +1,4 @@
-import {logo} from '../assets/index';
+import {logo} from '../assets/';
 
 export default class PreloadScene extends Phaser.Scene {
     constructor() {

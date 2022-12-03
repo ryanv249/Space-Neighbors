@@ -1,4 +1,4 @@
-import {PhaserText, PhaserLogo} from "../components/index"
+import {PhaserText, PhaserLogo} from "../components/"
 
 export default class MainScene extends Phaser.Scene {
     constructor() {
