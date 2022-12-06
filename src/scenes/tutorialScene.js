@@ -2,7 +2,7 @@ import {
     bomb, dude, platform, sky, star,
     PC_png_blk, PC_png_wte, PC_png_cyn, PC_xml,
     notebook,
-    } from "../assets/";
+    } from "../assets";
 
 export default class TutorialScene extends Phaser.Scene {
     constructor() {
@@ -105,7 +105,7 @@ export default class TutorialScene extends Phaser.Scene {
             frameRate: 10,
             // this animation will loop
             repeat: -1
-        })
+        });
 
         this.anims.create({
             key: 'turn',

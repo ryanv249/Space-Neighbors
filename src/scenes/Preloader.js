@@ -1,8 +1,8 @@
-import {logo} from '../assets/';
+import {logo} from '../assets';
 
-export default class PreloadScene extends Phaser.Scene {
+export default class Preloader extends Phaser.Scene {
     constructor() {
-      super({ key: 'PreloadScene' });
+      super({ key: 'Preloader' });
     }
   
     preload() {
