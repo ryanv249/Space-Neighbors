@@ -1,4 +1,10 @@
-import {logo} from '../assets';
+import {
+  bomb, dude, logo, platform, sky, star,
+  background, notebook,
+  PC_png_blk, PC_png_wte, PC_png_cyn, PC_xml,
+  GBD_png_blk, GBD_png_wte, GBD_png_cyn, GBD_xml,
+  system, sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune,
+} from '../assets';
 
 export default class Preloader extends Phaser.Scene {
     constructor() {
@@ -6,10 +12,18 @@ export default class Preloader extends Phaser.Scene {
     }
   
     preload() {
-      this.load.image('phaser-logo', logo);
+      this.load.image('background', background);
+
+      this.load.bitmapFont('main_font_b', PC_png_blk, PC_xml);
+      this.load.bitmapFont('main_font_w', PC_png_wte, PC_xml);
+      this.load.bitmapFont('main_font_c', PC_png_cyn, PC_xml);
+
+      this.load.bitmapFont('title_font_b', GBD_png_blk, GBD_xml);
+      this.load.bitmapFont('title_font_w', GBD_png_wte, GBD_xml);
+      this.load.bitmapFont('title_font_c', GBD_png_cyn, GBD_xml);
     }
   
     create() {
-      this.scene.start('MainScene');
+      this.scene.start('MainMenu');
     }
 }

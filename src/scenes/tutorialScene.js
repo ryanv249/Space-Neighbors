@@ -179,8 +179,8 @@ export default class TutorialScene extends Phaser.Scene {
             // kill current scene, start from beginning 
             // this.scene.scene.restart();
 
-            // kill current scene, start PreloadScene 
-            // this.scene.scene.start('PreloadScene');
+            // kill current scene, start Preloader
+            this.scene.scene.start('Preloader');
 
             // start PreloadScene. runs in parallel with current scene 
             // this.scene.scene.launch('PreloadScene');

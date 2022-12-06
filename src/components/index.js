@@ -1,7 +1,9 @@
-import PhaserLogo from './phaserLogo';
-import PhaserText from './phaserText';
+import Background from './Background';
+import TitleText from './TitleText';
+import Button from './Button';
 
 export {
-    PhaserLogo,
-    PhaserText
-}
+    Background,
+    TitleText,
+    Button
+};

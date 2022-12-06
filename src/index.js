@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import {logo} from "./assets/";
-import {PreloadScene, MainScene, TutorialScene} from "./scenes/";
+import {Preloader, MainMenu, TutorialScene} from "./scenes/";
 
 class MyGame extends Phaser.Scene
 {
@@ -49,7 +49,7 @@ var config = {
         }
     },
 
-    scene: [TutorialScene, MainScene, PreloadScene]
+    scene: [TutorialScene, MainMenu, Preloader]
 };
 
 // this line is what 'runs' the game 

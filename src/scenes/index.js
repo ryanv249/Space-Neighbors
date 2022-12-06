@@ -1,9 +1,9 @@
-import MainScene from "./MainScene";
+import MainMenu from "./MainMenu";
 import Preloader from "./Preloader";
 import TutorialScene from "./TutorialScene";
 
 export {
-    MainScene,
+    MainMenu,
     Preloader,
     TutorialScene
 };
