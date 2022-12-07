@@ -1,4 +1,4 @@
-import {TitleText, Background, Button} from "../components";
+import {TitleText, Background, TextButton} from "../components";
 
 export default class MainMenu extends Phaser.Scene {
     constructor() {
@@ -16,15 +16,15 @@ export default class MainMenu extends Phaser.Scene {
       new TitleText(this);
 
       // create menu buttons
-      const b1 = new Button(this, 0, 0, -1, -1, 0xff5500, 40, 'main_font_b', 'afiafsasfasfs\niausdhiuahias', 
+      const b1 = new TextButton(this, 0, 0, -1, -1, 0xff5500, 40, 'main_font_b', 'afiafsasfasfs\niausdhiuahias', 
       () => console.log('clicked1'),
-      () => console.log('over1'),
-      () => console.log('off1'));
+      () => b1.background.setFillStyle(0xff9900),
+      () => b1.background.setFillStyle(0xff5500));
 
-      const b2 = new Button(this, 0, 0, -1, -1, 0xff5500, 90, 'main_font_b', 'button2', 
+      const b2 = new TextButton(this, 0, 0, -1, -1, 0xff5500, 90, 'main_font_b', 'button2', 
       () => console.log('clicked2'),
-      () => console.log('over2'),
-      () => console.log('off2'));
+      () => b2.background.setFillStyle(0xff9900),
+      () => b2.background.setFillStyle(0xff5500));
 
 
       // arrange buttons on screen

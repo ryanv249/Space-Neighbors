@@ -1,4 +1,4 @@
-export default class Button{
+export default class TextButton{
     /**
      * Creates a Bitmap Text GO with the passed font and label with a Rectangle Shape GO as a background.
      * The background rectangle handles interaction, and it is scaled to fit the text + padding.
