@@ -1,10 +1,10 @@
-import {
-  bomb, dude, logo, platform, sky, star,
+import{
   background, notebook,
   PC_png_blk, PC_png_wte, PC_png_cyn, PC_xml,
   GBD_png_blk, GBD_png_wte, GBD_png_cyn, GBD_xml,
   system, sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune,
 } from '../assets';
+
 
 export default class Preloader extends Phaser.Scene {
     constructor() {
@@ -13,6 +13,17 @@ export default class Preloader extends Phaser.Scene {
   
     preload() {
       this.load.image('background', background);
+      this.load.image('notebook', notebook);
+      this.load.image('system', system);
+      this.load.image('sun', sun);
+      this.load.image('mercury', mercury);
+      this.load.image('venus', venus);
+      this.load.image('earth', earth);
+      this.load.image('mars', mars);
+      this.load.image('jupiter', jupiter);
+      this.load.image('saturn', saturn);
+      this.load.image('urnaus', uranus);
+      this.load.image('neptune', neptune);
 
       this.load.bitmapFont('main_font_b', PC_png_blk, PC_xml);
       this.load.bitmapFont('main_font_w', PC_png_wte, PC_xml);

@@ -13,11 +13,11 @@ export default class MainMenu extends Phaser.Scene {
   
     create() {
       new Background(this);
-      new TitleText(this);
+      new TitleText(this, 150, 'StarCards', 128);
 
       // create menu buttons
       const b1 = new TextButton(this, 0, 0, -1, -1, 0x8D4DE2, 80, 'title_font_b', 'Learn', 
-      () => console.log('clicked1'),
+      () => this.scene.start('TestLevel'),
       () => b1.background.setFillStyle(0x409BE5),
       () => b1.background.setFillStyle(0x8D4DE2));
 
@@ -28,7 +28,7 @@ export default class MainMenu extends Phaser.Scene {
 
 
       // arrange buttons on screen
-      let menu = this.add.rectangle(400, 300, 200, this.height, 0x00, 0);
+      let menu = this.add.rectangle(400, 300, 200, this.cameras.main.height, 0x00, 0);
       Phaser.Display.Align.In.Center(b1.background, menu);
       b1.Align(0, b1.offsetY*0.5);
       Phaser.Display.Align.To.BottomCenter(b2.background, b1.background, 0, 40);

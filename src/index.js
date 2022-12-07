@@ -1,33 +1,9 @@
 import Phaser from 'phaser';
-import {logo} from "./assets/";
-import {Preloader, MainMenu, TutorialScene} from "./scenes/";
 
-class MyGame extends Phaser.Scene
-{
-    constructor ()
-    {
-        super();
-    }
-
-    preload ()
-    {
-        this.load.image('logo', logo);
-    }
-      
-    create ()
-    {
-        const logo = this.add.image(400, 150, 'logo');
-      
-        this.tweens.add({
-            targets: logo,
-            y: 450,
-            duration: 2000,
-            ease: "Power2",
-            yoyo: true,
-            loop: -1
-        });
-    }
-}
+import {
+    Preloader, MainMenu, TutorialScene, TestLevel,
+    EarthLevel, MarsLevel, VenusLevel, MercuryLevel, JupiterLevel, SaturnLevel, UranusLevel, NeptuneLevel
+} from "./scenes/";
 
 var config = {
     // type of display (webGL or canvas)
@@ -35,7 +11,7 @@ var config = {
     // size of display (resolution)
     width: 800,
     height: 600,
-    // place game into div called "gameArea" and center in middle of screen
+    // place game into div called gameArea and center in middle of screen
     scale: {
         parent: "gameArea",
         autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
@@ -49,7 +25,11 @@ var config = {
         }
     },
 
-    scene: [TutorialScene, MainMenu, Preloader]
+    scene: 
+    [ 
+        Preloader, MainMenu, TutorialScene, TestLevel,
+        EarthLevel, MarsLevel, VenusLevel, MercuryLevel, JupiterLevel, SaturnLevel, UranusLevel, NeptuneLevel
+    ]
 };
 
 // this line is what 'runs' the game 
