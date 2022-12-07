@@ -63,7 +63,6 @@ export default class TextButton{
      */
     Align(offX, offY){
         // offset recommended due to built-in margins in bitmaptext object. 
-        // default offset usually good enough for 1-line strings.
         Phaser.Display.Align.In.Center(this.text, this.background,
             offX === undefined ? this.offsetX : offX,
             offY === undefined ? this.offsetY : offY
