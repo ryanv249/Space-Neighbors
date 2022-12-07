@@ -23,17 +23,27 @@ import GBD_png_wte from './fonts/Grobold/GBD_white.png';
 import GBD_xml from './fonts/Grobold/GBD.xml';
 
 
-// planet assets 
-import earth from './planets/earth.png';
-import jupiter from './planets/jupiter.png';
-import mars from './planets/mars.png';
-import mercury from './planets/mercury.png';
-import neptune from './planets/neptune.png';
-import saturn from './planets/saturn.png';
-import sun from './planets/sun.png';
-import uranus from './planets/uranus.png';
-import venus from './planets/venus.png';
+// large planet assets 
+import earth_lg from './planets/earth_lg.png';
+import jupiter_lg from './planets/jupiter_lg.png';
+import mars_lg from './planets/mars_lg.png';
+import mercury_lg from './planets/mercury_lg.png';
+import neptune_lg from './planets/neptune_lg.png';
+import saturn_lg from './planets/saturn_lg.png';
+import uranus_lg from './planets/uranus_lg.png';
+import venus_lg from './planets/venus_lg.png';
 import system from './planets/system.png';
+
+// small planet assets 
+import earth_sm from './planets/earth_sm.png';
+import jupiter_sm from './planets/jupiter_sm.png';
+import mars_sm from './planets/mars_sm.png';
+import mercury_sm from './planets/mercury_sm.png';
+import neptune_sm from './planets/neptune_sm.png';
+import saturn_sm from './planets/saturn_sm.png';
+import uranus_sm from './planets/uranus_sm.png';
+import venus_sm from './planets/venus_sm.png';
+
 
 
 
@@ -42,5 +52,6 @@ export{
     background, notebook,
     PC_png_blk, PC_png_wte, PC_png_cyn, PC_xml,
     GBD_png_blk, GBD_png_wte, GBD_png_cyn, GBD_xml,
-    system, sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune,
+    system, mercury_lg, venus_lg, earth_lg, mars_lg, jupiter_lg, saturn_lg, uranus_lg, neptune_lg,
+    mercury_sm, venus_sm, earth_sm, mars_sm, jupiter_sm, saturn_sm, uranus_sm, neptune_sm
 };

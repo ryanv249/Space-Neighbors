@@ -9,8 +9,8 @@ var config = {
     // type of display (webGL or canvas)
     type: Phaser.AUTO,
     // size of display (resolution)
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 700,
     // place game into div called gameArea and center in middle of screen
     scale: {
         parent: "gameArea",
