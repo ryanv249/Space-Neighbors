@@ -3,11 +3,17 @@ import TitleText from './TitleText';
 import TextButton from './TextButton';
 import TextBox from './TextBox';
 import StarCard from './StarCard';
+import DropQuestion from './DropQuestion';
+import PickOneQuestion from './PickOneQuestion';
+import TrueFalseQuestion from './TrueFalseQuestion';
 
 export {
     Background,
     TitleText,
     TextButton,
     TextBox,
-    StarCard
+    StarCard,
+    DropQuestion,
+    PickOneQuestion,
+    TrueFalseQuestion
 };

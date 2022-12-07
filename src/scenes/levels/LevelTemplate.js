@@ -1,6 +1,5 @@
-import { venus_lg } from "../../assets";
 import { 
-    TextButton, Background, TitleText, TextBox, StarCard
+    TextButton, Background, TitleText, TextBox, StarCard, DropQuestion, PickOneQuestion, TrueFalseQuestion
  } from "../../components";
 
 export default class TestLevel extends Phaser.Scene{
@@ -18,15 +17,28 @@ export default class TestLevel extends Phaser.Scene{
         new Background(this);
         new TitleText(this, 280,  'Level 0: The Void', 70);
 
-        
-        let b = new StarCard(this, 600, 600, 'earth_sm', 'Earth');
-        new StarCard(this, 300, 400, 'jupiter_sm', 'Jupiter');
-        new StarCard(this, 500, 600, 'mars_sm', 'Mars');
-        new StarCard(this, 400, 500, 'venus_sm', 'Venus');
-        new StarCard(this, 200, 300, 'uranus_sm', 'Uranus');
-        new StarCard(this, 400, 300, 'saturn_sm', 'Saturn');
-        new StarCard(this, 600, 100, 'mercury_sm', 'Mercury');
-        new StarCard(this, 600, 200, 'neptune_sm', 'Neptune');
+        let q1 = new DropQuestion(this, 400, 300, 3, 'hello there. this is a real question. answer well!', ['Earth', 'Saturn', 'Venus']);
+        q1.enable();
+        console.log(q1);
+
+
+
+        // q1.zone.on('pointerover', () => {
+        //     console.log('on');
+        // }, this);
+
+        // q1.zone.on('pointerout', () => {
+        //     console.log('off');
+        // }, this);
+
+        let er = new StarCard(this, 600, 600, 'earth_sm', 'Earth');
+        let jp =new StarCard(this, 800, 600, 'jupiter_sm', 'Jupiter');
+        let mr =new StarCard(this, 700, 600, 'mars_sm', 'Mars');
+        let vn =new StarCard(this, 600, 600, 'venus_sm', 'Venus');
+        let ur =new StarCard(this, 500, 600, 'uranus_sm', 'Uranus');
+        let sn =new StarCard(this, 400, 600, 'saturn_sm', 'Saturn');
+        let my =new StarCard(this, 300, 600, 'mercury_sm', 'Mercury');
+        let np =new StarCard(this, 200, 600, 'neptune_sm', 'Neptune');
 
         // all images scaled to about the same size w/ these factors
         // let g = this.add.image(400,300, 'system');
@@ -47,12 +59,23 @@ export default class TestLevel extends Phaser.Scene{
         let TB1 = new TextBox(this, 500, 400, 600, 'main_font_w', 23, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt sollicitudin massa vel eleifend. Cras porttitor dolor mauris, nec bibendum nunc congue eleifend. Pellentesque molestie tempus mauris, elementum scelerisque urna. Aenean ipsum ante, faucibus at massa a, euismod ultricies erat. Etiam eu semper mauris. Proin tempus mollis nisl, sed convallis sem. Aenean et dictum sapien. Proin posuere lacus et magna porta lobortis. Nulla pellentesque viverra dictum. Sed ullamcorper quam sit amet feugiat placerat.');
         TB1.container.setInteractive();
         console.log(TB1);
-        this.input.setDraggable(TB1.container);
+        // this.input.setDraggable(TB1.container);
 
-        b.enableInteration(true);
+        er.enable(true);
+        jp.enable(true);
+        mr.enable(true);
+        vn.enable(true);
+        ur.enable(true);
+        sn.enable(true);
+        my.enable(true);
+        np.enable(true);
 
         TB1.container.on('wheel', function(pointer, deltaX, deltaY, deltaZ){
             TB1.container.setY(TB1.container.y + deltaY *0.3);
+        }, this);
+
+        TB1.container.on('pointerdown', () =>{
+            q1.checkResults();
         }, this);
         // b.container.setInteractive();
         // this.input.setDraggable(b.container);

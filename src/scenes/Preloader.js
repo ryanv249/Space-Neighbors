@@ -1,5 +1,4 @@
 import{
-  bomb, dude, logo, platform, sky, star,
   background, notebook,
   PC_png_blk, PC_png_wte, PC_png_cyn, PC_xml,
   GBD_png_blk, GBD_png_wte, GBD_png_cyn, GBD_xml,
