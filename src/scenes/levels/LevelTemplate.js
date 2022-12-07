@@ -50,6 +50,10 @@ export default class TestLevel extends Phaser.Scene{
         this.input.setDraggable(TB1.container);
 
         b.enableInteration(true);
+
+        TB1.container.on('wheel', function(pointer, deltaX, deltaY, deltaZ){
+            TB1.container.setY(TB1.container.y + deltaY *0.3);
+        }, this);
         // b.container.setInteractive();
         // this.input.setDraggable(b.container);
         // var cont = this.add.container(0,0, [TB1.box, TB1.text]);
