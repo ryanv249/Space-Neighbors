@@ -30,9 +30,9 @@ export default class MainMenu extends Phaser.Scene {
       // arrange buttons on screen
       let menu = this.add.rectangle(this.width/2, this.height/2, 200, this.height, 0x00, 0);
       Phaser.Display.Align.In.Center(b1.background, menu, 0, -80);
-      b1.Align(0, b1.offsetY*0.5);
+      b1.align(0, b1.offsetY*0.5);
       Phaser.Display.Align.To.BottomCenter(b2.background, b1.background, 0, 80);
-      b2.Align(0, b1.offsetY*0.7);
+      b2.align(0, b1.offsetY*0.7);
 
     }
 }

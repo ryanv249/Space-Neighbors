@@ -61,7 +61,7 @@ export default class TextButton{
      * @param {number} offY 
      * y offset. default value:     this.text.height*0.15
      */
-    Align(offX, offY){
+    align(offX, offY){
         // offset recommended due to built-in margins in bitmaptext object. 
         Phaser.Display.Align.In.Center(this.text, this.background,
             offX === undefined ? this.offsetX : offX,

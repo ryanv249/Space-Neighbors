@@ -14,11 +14,11 @@ export default class TextBox{
      */
     constructor(scene, xPos, yPos, maxWidth, font, textSize, text){
         // create box 
-        this.box = scene.add.rectangle(xPos, yPos, 0, 0, 0x00, 0.6)
-            .setOrigin(0);
+        this.box = scene.add.rectangle(0, 0, 0, 0, 0x00, 0.6);
         
         // create text 
         this.text = scene.add.bitmapText(0, 0, font, text, textSize)
+            .setOrigin(0.5)
             .setMaxWidth(maxWidth);
         
         // make box a little bigger than the text 
@@ -26,7 +26,13 @@ export default class TextBox{
         this.box.height = this.text.height*1.1;
 
         // center text in box 
-        Phaser.Display.Align.In.Center(this.text, this.box);
+        this.box.setOrigin(0.5);
+        Phaser.Display.Align.In.Center(this.text, this.box, 0, this.text.height*0.02);
+
+        // create container to allow for drags (probably won't use this)
+        this.container = scene.add.container(xPos, yPos, [this.box, this.text]);
+        this.container.setSize(this.box.displayWidth, this.box.displayHeight);
+
     }
 
 
