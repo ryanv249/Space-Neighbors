@@ -237,6 +237,11 @@ export default class DropQuestion{
             this.zone.disableInteractive();
             this.backDrop.setFillStyle(0x2FC325);
         }
+        else{
+            // nothing wrong, but we haven't gotten all correct yet. 
+            // set color to be white to indicate no loss but also no gain 
+            this.backDrop.setFillStyle(0xffffff);
+        }
     }
     
 }
