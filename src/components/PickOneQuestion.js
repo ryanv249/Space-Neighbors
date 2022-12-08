@@ -154,6 +154,8 @@ export default class PickOneQuestion{
      * If correct, disable other buttons, make them red, and become green.
      * If incorrect, keep button disabled and make it red.
      * 
+     * +1 FOR EVERY UNCHECKED INCORRECT ANSWER (and the correct answer)
+     * -1 FOR EVERY CHECKED INCORRECT ANSWER
      * 
      * TODO: make reset functions for classes to make this prettier
      */
@@ -162,28 +164,42 @@ export default class PickOneQuestion{
         if(this.recentAnswer !== null){
             // has the correct button been pressed?
             if(this.recentAnswer === this.answer){
-                // disable buttons
+                // question complete!
+                // completion point
+                this.box.scene.score++;
+
+                // disable all buttons, give point for every unchecked button 
                 if(this.type === 0){
                     // StarCards
                     for(let i = 0; i < this.buttons.length; i++){
-                        this.buttons[i].container.disableInteractive();
+                        if(this.buttons[i].container.input.enabled){
+                            // button was never pressed. give point!
+                            this.box.scene.score++;
+                            this.buttons[i].container.disableInteractive();
+                        }
                         this.buttons[i].card.setFillStyle(0xDF2727);
                     }
                     // make last pressed green 
                     this.recentButton.card.setFillStyle(0x2FC325);
                 }
+
                 else{
                     // TextButtons
                     for(let i = 0; i < this.buttons.length; i++){
-                        this.buttons[i].background.disableInteractive();
+                        if(this.buttons[i].background.input.enabled){
+                            // button was never pressed. give point!
+                            this.box.scene.score++;
+                            this.buttons[i].background.disableInteractive();
+                        }
                         this.buttons[i].background.setFillStyle(0xDF2727);
                     }
                     // make last pressed green 
                     this.recentButton.background.setFillStyle(0x2FC325);
                 }
+
             }
             else{
-                // make it red 
+                // incorrect response. make it red, remove point.
                 if(this.type === 0){
                     // StarCards
                     this.recentButton.text.setFont('title_font_w');
@@ -194,11 +210,16 @@ export default class PickOneQuestion{
                     this.recentButton.text.setFont('main_font_w');
                     this.recentButton.background.setFillStyle(0xDF2727);
                 }
-
-                // forget last pressed 
-                this.recentButton = null;
-                this.recentAnswer = null;
+                // subtract point 
+                this.box.scene.score--;
             }
+
+            // apply point changes 
+            this.box.scene.registry.set('score', this.box.scene.score);
+
+            // remove last checked reference for press check (also prevents infinite score)
+            this.recentButton = null;
+            this.recentAnswer = null;
         }
         
     }

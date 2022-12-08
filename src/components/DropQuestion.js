@@ -118,7 +118,7 @@ export default class DropQuestion{
             // update zone card lists  
             this.storedNames.push(gameObject.list[1].text);
             this.storedCards.push(gameObject);
-            console.log('stored!');
+            // console.log('stored!');
         }
     }
 
@@ -201,16 +201,28 @@ export default class DropQuestion{
     /**
      * Checks if enough correct responses given
      * If true, make zone green and disable interactivity on itself and cards
+     * GIVES 1 POINT IF ALL CORRECT, -1 PER INCORRECT
      */
     checkResults(){
+        if(!this.zone.input.enabled){
+            // prevent score being increased from completed zones
+            return;
+        }
         for(let i = 0; i < this.storedNames.length; i++){
             if(this.answers.includes(this.storedNames[i])){
                 // correct answer, keep checking
                 continue;
             }
             else{
-                // incorrect answer found. remove cards 
+                // incorrect answer found. remove cards
                 this.removeCards();
+
+                // set zone to be red until next hover 
+                this.backDrop.setFillStyle(0xDF2727);
+
+                // remove point 
+                this.container.scene.score--;
+                this.container.scene.registry.set('score', this.container.scene.score);
                 return;
             }
         }
@@ -218,7 +230,9 @@ export default class DropQuestion{
         // do we have the number of required responses?
         if(this.storedNames.length === this.numRequired){
             // this question is complete 
-
+            // add point!
+            this.container.scene.score++;
+            this.container.scene.registry.set('score', this.container.scene.score);
             // disable zone and make green 
             this.zone.disableInteractive();
             this.backDrop.setFillStyle(0x2FC325);

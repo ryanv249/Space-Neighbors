@@ -11,9 +11,12 @@ export default class TestLevel extends Phaser.Scene{
         // get screen bounds
         this.width = this.cameras.main.width;
         this.height = this.cameras.main.height;
+        // get current score 
+        this.score = this.registry.get('score');
     }
 
     create(){
+        this.scene.launch('ScoreDisplay', [100, 100]).bringToTop('ScoreDisplay');
         new Background(this);
         new TitleText(this, 280,  'Level 0: The Void', 70);
 
@@ -100,6 +103,9 @@ export default class TestLevel extends Phaser.Scene{
         //     q3.checkResults();
             P1.checkResults();
             P2.checkResults();
+            // this.score++;
+            // this.registry.set('score', this.score);
+            
         }, this);
 
         // b.container.setInteractive();

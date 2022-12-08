@@ -1,4 +1,5 @@
 import{
+  star,
   background, notebook,
   PC_png_blk, PC_png_wte, PC_png_cyn, PC_xml,
   GBD_png_blk, GBD_png_wte, GBD_png_cyn, GBD_xml,
@@ -13,6 +14,7 @@ export default class Preloader extends Phaser.Scene {
     }
   
     preload() {
+      this.load.image('star', star);
       this.load.image('background', background);
       this.load.image('notebook', notebook);
 
@@ -45,6 +47,7 @@ export default class Preloader extends Phaser.Scene {
     }
   
     create() {
-      this.scene.start('MainMenu');
+      this.registry.set('score', 0);
+      this.scene.launch('MainMenu');
     }
 }
