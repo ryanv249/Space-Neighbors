@@ -1,5 +1,5 @@
 import { 
-    TextButton, Background, TitleText, TextBox, StarCard, DropQuestion, PickOneQuestion
+    TextButton, Background, TitleText, TextBox, StarCard, DropQuestion, PickOneQuestion, PlanetDescription, Notebook
  } from "../../components";
 
 export default class TestLevel extends Phaser.Scene{
@@ -23,8 +23,8 @@ export default class TestLevel extends Phaser.Scene{
         const q1 = new DropQuestion(this, 300, 300, 3, 'hello there. this is a real question. answer well!', ['Earth', 'Saturn', 'Venus']);
         q1.enable('q1');
 
-        // const q2 = new DropQuestion(this, 700, 300, 4, 'hey hey hey hey question 2!!!!', ['Uranus', 'Mars', 'Mercury', 'Neptune']);
-        // q2.enable('q2');
+        const q2 = new DropQuestion(this, 700, 300, 4, 'hey hey hey hey question 2!!!!', ['Uranus', 'Mars', 'Mercury', 'Neptune']);
+        q2.enable('q2');
 
         // const q3 = new DropQuestion(this, 900, 300, 1, 'hwoifehowfeiuewheuihiewkf !!!!', ['Jupiter']);
         // q3.enable('q3');
@@ -64,7 +64,7 @@ export default class TestLevel extends Phaser.Scene{
         // this.input.setDraggable(cont);
         
 
-        let TB1 = new TextBox(this, 500, 400, 600, 'main_font_w', 23, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt sollicitudin massa vel eleifend. Cras porttitor dolor mauris, nec bibendum nunc congue eleifend. Pellentesque molestie tempus mauris, elementum scelerisque urna. Aenean ipsum ante, faucibus at massa a, euismod ultricies erat. Etiam eu semper mauris. Proin tempus mollis nisl, sed convallis sem. Aenean et dictum sapien. Proin posuere lacus et magna porta lobortis. Nulla pellentesque viverra dictum. Sed ullamcorper quam sit amet feugiat placerat.');
+        let TB1 = new TextBox(this, 500, 400, 600, 'main_font_w', 19, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt sollicitudin massa vel eleifend. Cras porttitor dolor mauris, nec bibendum nunc congue eleifend. Pellentesque molestie tempus mauris, elementum scelerisque urna. Aenean ipsum ante, faucibus at massa a, euismod ultricies erat. Etiam eu semper mauris. Proin tempus mollis nisl, sed convallis sem. Aenean et dictum sapien. Proin posuere lacus et magna porta lobortis. Nulla pellentesque viverra dictum. Sed ullamcorper quam sit amet feugiat placerat.');
         TB1.container.setInteractive();
         console.log(TB1);
         // this.input.setDraggable(TB1.container);
@@ -84,29 +84,35 @@ export default class TestLevel extends Phaser.Scene{
 
 
 
-        let P1 = new PickOneQuestion(this, 600, 300, 300, 21, 1, 22, 22,
-             'Who is my mommy! I want to know! Really badlu!', 
-             ['Earth', 'Venus', 'Mars or your mother. I dont know nor do i care', 'Jupiter'],
-              'Earth');
+        // let P1 = new PickOneQuestion(this, 600, 300, 300, 21, 1, 22, 22,
+        //      'Who is my mommy! I want to know! Really badlu!', 
+        //      ['Earth', 'Venus', 'Mars or your mother. I dont know nor do i care', 'Jupiter'],
+        //       'Earth');
 
-        P1.enable();
+        // P1.enable();
 
-        let P2 = new PickOneQuestion(this, 300, 300, 300, 21, 0, 22, 22,
-            'BRUH who let you in here!123213 This is ridiculous',
-             ['Earth', 'Venus', 'Mars', 'Jupiter'],
-              'Earth');
-        P2.enable();
+        // let P2 = new PickOneQuestion(this, 300, 300, 300, 21, 0, 22, 22,
+        //     'BRUH who let you in here!123213 This is ridiculous',
+        //      ['Earth', 'Venus', 'Mars', 'Jupiter'],
+        //       'Earth');
+        // P2.enable();
 
         TB1.container.on('pointerdown', () =>{
             q1.checkResults();
-        //     q2.checkResults();
+            q2.checkResults();
         //     q3.checkResults();
-            P1.checkResults();
-            P2.checkResults();
+            // P1.checkResults();
+            // P2.checkResults();
             // this.score++;
             // this.registry.set('score', this.score);
             
         }, this);
+
+        // this.add.image(200,200,'earth_lg');
+        let pd1 = new PlanetDescription(this, [300, 200], [400, 500], 'earth_lg', 'This is the description for earth. Blah Blah Blah. ifhfhwhwfoeh wefbuiewfhhofwe qwifhwoihwof!!!!');
+
+        pd1.display();
+        pd1.defineInteractive();
 
         // b.container.setInteractive();
         // this.input.setDraggable(b.container);

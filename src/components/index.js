@@ -5,6 +5,8 @@ import TextBox from './TextBox';
 import StarCard from './StarCard';
 import DropQuestion from './DropQuestion';
 import PickOneQuestion from './PickOneQuestion';
+import PlanetDescription from './PlanetDescription';
+import Notebook from './Notebook';
 
 export {
     Background,
@@ -14,4 +16,6 @@ export {
     StarCard,
     DropQuestion,
     PickOneQuestion,
+    PlanetDescription,
+    Notebook
 };
