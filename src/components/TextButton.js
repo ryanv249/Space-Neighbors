@@ -6,26 +6,33 @@ export default class TextButton{
      * 
      * @param {Phaser.Scene} scene 
      * @param {number} xPos 
+     * x-position of background
      * @param {number} yPos 
-     * position of background
+     * y-position of background
+     * @param {number} wrapWidth 
+     * maximum width allowed for text. set to -1 for no effect.
+     * does not turn off size scaling.
      * @param {number} forceW
+     * background width override. for scaled size, pass -1.
      * @param {number} forceH
-     * background size overrides, for scaled size, pass -1.
+     * background height override. for scaled size, pass -1.
      * @param {number} color 
      * color of background
+     * @param {number} alpha 
+     * transparency of background
      * @param {number} textSize
      * @param {String} font 
      * @param {String} label 
-     * @param {*} onClick 
-     * @param {*} onHover 
-     * @param {*} offHover 
-     * interactive callbacks
+     * Text to be displayed inside button. 
      */
-    constructor(scene, xPos, yPos, forceW, forceH, color, textSize, font, label, onClick, onHover, offHover){
+    constructor(scene, xPos, yPos, wrapWidth, forceW, forceH, color, alpha, textSize, font, label){
         // add objects to scene
         // rectangle starting size of 0,0 very important.
-        this.background = scene.add.rectangle(xPos, yPos, 0, 0, color);
+        this.background = scene.add.rectangle(0, 0, 0, 0, color, alpha);
         this.text = scene.add.bitmapText(0, 0, font, label, textSize);
+
+        // restrict text width if set
+        this.text.setMaxWidth((wrapWidth !== -1 ? wrapWidth : this.text.width));
 
         // set base background size
         if(forceW !== -1 || forceH !== -1){
@@ -39,15 +46,31 @@ export default class TextButton{
             this.background.height = this.text.height*1.1;
         }
 
-        // set default offsets for Align() function
-        this.offsetX = this.text.width*0.005;
-        this.offsetY = this.text.height*0.15;
+        // properly set origin of background. cannot do it until final size is determined.
+        this.background.setOrigin(0.5);
 
-        // set rectangle to be interactable
-        // cannot do it when adding rectangle since size is not set yet; bad stuff happens
-        this.background
-            .setOrigin(0)
-            .setInteractive({useHandCursor: true})
+        // set default offsets for align() method
+        this.offsetX = this.text.width*0.005;
+        this.offsetY = this.text.height*0.09;
+
+        // place into container 
+        this.container = scene.add.container(xPos, yPos, [this.background, this.text]);
+        this.container.setSize(this.background.displayWidth, this.background.displayHeight);
+
+    }
+
+
+    /**
+     * Calls setInteractive() on button and applies passed listener functions.
+     * @param {{}} onClick 
+     * 'pointerdown' callback
+     * @param {{}} onHover 
+     * 'pointerover' callback
+     * @param {{}} offHover 
+     * 'pointerout' callback
+     */
+    enable(onClick, onHover, offHover){
+        this.background.setInteractive({useHandCursor: true})
             .on('pointerdown', () => onClick())
             .on('pointerover', () => onHover())
             .on('pointerout', () => offHover());
@@ -59,7 +82,7 @@ export default class TextButton{
      * @param {number} offX 
      * x offset. default value:     this.text.width*0.005
      * @param {number} offY 
-     * y offset. default value:     this.text.height*0.15
+     * y offset. default value:     this.text.height*0.09
      */
     align(offX, offY){
         // offset recommended due to built-in margins in bitmaptext object. 

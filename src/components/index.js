@@ -5,7 +5,6 @@ import TextBox from './TextBox';
 import StarCard from './StarCard';
 import DropQuestion from './DropQuestion';
 import PickOneQuestion from './PickOneQuestion';
-import TrueFalseQuestion from './TrueFalseQuestion';
 
 export {
     Background,
@@ -15,5 +14,4 @@ export {
     StarCard,
     DropQuestion,
     PickOneQuestion,
-    TrueFalseQuestion
 };

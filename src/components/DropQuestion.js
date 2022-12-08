@@ -24,7 +24,7 @@ export default class DropQuestion{
         this.box = scene.add.rectangle(xPos, yPos, 350, 0, 0x00, 0.6);
 
         // create text
-        this.text = scene.add.bitmapText(xPos, yPos, 'main_font_w', question, 15)
+        this.text = scene.add.bitmapText(xPos, yPos, 'main_font_c', question, 15)
             .setOrigin(0.5)
             .setMaxWidth(300);
 
@@ -221,7 +221,6 @@ export default class DropQuestion{
 
             // disable zone and make green 
             this.zone.disableInteractive();
-            // this.zone.scene.input.setDraggable(this.zone, false);
             this.backDrop.setFillStyle(0x2FC325);
         }
     }

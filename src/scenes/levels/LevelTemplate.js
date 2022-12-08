@@ -1,5 +1,5 @@
 import { 
-    TextButton, Background, TitleText, TextBox, StarCard, DropQuestion, PickOneQuestion, TrueFalseQuestion
+    TextButton, Background, TitleText, TextBox, StarCard, DropQuestion, PickOneQuestion
  } from "../../components";
 
 export default class TestLevel extends Phaser.Scene{
@@ -20,11 +20,11 @@ export default class TestLevel extends Phaser.Scene{
         const q1 = new DropQuestion(this, 300, 300, 3, 'hello there. this is a real question. answer well!', ['Earth', 'Saturn', 'Venus']);
         q1.enable('q1');
 
-        const q2 = new DropQuestion(this, 700, 300, 4, 'hey hey hey hey question 2!!!!', ['Uranus', 'Mars', 'Mercury', 'Neptune']);
-        q2.enable('q2');
+        // const q2 = new DropQuestion(this, 700, 300, 4, 'hey hey hey hey question 2!!!!', ['Uranus', 'Mars', 'Mercury', 'Neptune']);
+        // q2.enable('q2');
 
-        const q3 = new DropQuestion(this, 900, 300, 1, 'hwoifehowfeiuewheuihiewkf !!!!', ['Jupiter']);
-        q3.enable('q3');
+        // const q3 = new DropQuestion(this, 900, 300, 1, 'hwoifehowfeiuewheuihiewkf !!!!', ['Jupiter']);
+        // q3.enable('q3');
 
 
 
@@ -66,24 +66,42 @@ export default class TestLevel extends Phaser.Scene{
         console.log(TB1);
         // this.input.setDraggable(TB1.container);
 
-        er.enable(true);
-        jp.enable(true);
-        mr.enable(true);
-        vn.enable(true);
-        ur.enable(true);
-        sn.enable(true);
-        my.enable(true);
-        np.enable(true);
+        er.enable(true, () => {});
+        jp.enable(true, () => {});
+        mr.enable(true, () => {});
+        vn.enable(true, () => {});
+        ur.enable(true, () => {});
+        sn.enable(true, () => {});
+        my.enable(true, () => {});
+        np.enable(true, () => {});
 
         TB1.container.on('wheel', function(pointer, deltaX, deltaY, deltaZ){
             TB1.container.setY(TB1.container.y + deltaY *0.3);
         }, this);
 
+
+
+        let P1 = new PickOneQuestion(this, 600, 300, 300, 21, 1, 22, 22,
+             'Who is my mommy! I want to know! Really badlu!', 
+             ['Earth', 'Venus', 'Mars or your mother. I dont know nor do i care', 'Jupiter'],
+              'Earth');
+
+        P1.enable();
+
+        let P2 = new PickOneQuestion(this, 300, 300, 300, 21, 0, 22, 22,
+            'BRUH who let you in here!123213 This is ridiculous',
+             ['Earth', 'Venus', 'Mars', 'Jupiter'],
+              'Earth');
+        P2.enable();
+
         TB1.container.on('pointerdown', () =>{
             q1.checkResults();
-            q2.checkResults();
-            q3.checkResults();
+        //     q2.checkResults();
+        //     q3.checkResults();
+            P1.checkResults();
+            P2.checkResults();
         }, this);
+
         // b.container.setInteractive();
         // this.input.setDraggable(b.container);
         // var cont = this.add.container(0,0, [TB1.box, TB1.text]);
