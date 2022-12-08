@@ -54,36 +54,53 @@ export default class DropQuestion{
 
     /**
      *  Calls setInteractive() on the zone, enabling drag hover highlight and drop
+     *  @param {String} name 
+     *  Name of container used to differentiate between DropQuestions. 
+     *  Bad Things happen if non-unique names used!
      */
-     enable(){
-        this.container.setInteractive();
+     enable(name){
+        this.container.name = name;
+        this.zone.setInteractive();
 
         // when inside dropzone, make it grey 
-        this.container.scene.input.on('dragenter', function(pointer, gameObject, dropZone){
-            // console.log('see');
-            this.backDrop.setFillStyle(0x3B3B3B);
-        }, this);
-
-        // turn it back to black on exit 
-        this.container.scene.input.on('dragleave', function(pointer, gameObject, dropZone){
-            // console.log('saw');
-            this.backDrop.setFillStyle(0x00);
-        }, this);
-
-        // if we drop the card, also set it back to black
-        this.container.scene.input.on('drop', function(pointer, gameObject, dropZone){
-            // console.log('bang');
-            this.backDrop.setFillStyle(0x00);
-        }, this);
-
-        this.container.scene.input.on('dragend', function(pointer, gameObject, dropped){
-            if(dropped && this.addCard(gameObject)){
-                // if we added the card to the zone, record its info 
-                this.recordAnswer(gameObject);
+        this.zone.scene.input.on('dragenter', function(pointer, gameObject, dropZone){
+            if(dropZone.parentContainer.name === this.container.name){
+                // console.log('see');
+                this.backDrop.setFillStyle(0x3B3B3B);
             }
-            else{
-                gameObject.setX(gameObject.input.dragStartX);
-                gameObject.setY(gameObject.input.dragStartY);
+        }, this);
+
+        // back to black on exit 
+        this.zone.scene.input.on('dragleave', function(pointer, gameObject, dropZone){
+            if(dropZone.parentContainer.name === this.container.name){
+                // console.log('saw');
+                this.backDrop.setFillStyle(0x00);
+            }
+        }, this);
+
+        // also back to black on drop
+        this.zone.scene.input.on('drop', function(pointer, gameObject, dropZone){
+            if(dropZone.parentContainer.name === this.container.name){
+                // console.log('bang');
+                this.backDrop.setFillStyle(0x00);
+
+                if(this.addCard(gameObject)){
+                    // card placed inside zone, store data 
+                    this.recordAnswer(gameObject);
+                }
+                else{
+                    // not possible to place inside zone. reset card position 
+                    gameObject.setX(gameObject.startX);
+                    gameObject.setY(gameObject.startY);
+                }
+            }
+        }, this);
+
+        // place card back if not dropped inside zone 
+        this.zone.scene.input.on('dragend', function(pointer, gameObject, dropped){
+            if(!dropped){
+                gameObject.setX(gameObject.startX);
+                gameObject.setY(gameObject.startY);
             }
         }, this);
     }
@@ -194,23 +211,19 @@ export default class DropQuestion{
             else{
                 // incorrect answer found. remove cards 
                 this.removeCards();
-                return false;
+                return;
             }
         }
         // if here, all given answers correct.
         // do we have the number of required responses?
         if(this.storedNames.length === this.numRequired){
-            // all done 
+            // this question is complete 
 
             // disable zone and make green 
             this.zone.disableInteractive();
             // this.zone.scene.input.setDraggable(this.zone, false);
             this.backDrop.setFillStyle(0x2FC325);
-            return true;
         }
-
-        // missing some correct responses.
-        return false;
     }
     
 }

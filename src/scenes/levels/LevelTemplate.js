@@ -17,9 +17,14 @@ export default class TestLevel extends Phaser.Scene{
         new Background(this);
         new TitleText(this, 280,  'Level 0: The Void', 70);
 
-        let q1 = new DropQuestion(this, 400, 300, 3, 'hello there. this is a real question. answer well!', ['Earth', 'Saturn', 'Venus']);
-        q1.enable();
-        console.log(q1);
+        const q1 = new DropQuestion(this, 300, 300, 3, 'hello there. this is a real question. answer well!', ['Earth', 'Saturn', 'Venus']);
+        q1.enable('q1');
+
+        const q2 = new DropQuestion(this, 700, 300, 4, 'hey hey hey hey question 2!!!!', ['Uranus', 'Mars', 'Mercury', 'Neptune']);
+        q2.enable('q2');
+
+        const q3 = new DropQuestion(this, 900, 300, 1, 'hwoifehowfeiuewheuihiewkf !!!!', ['Jupiter']);
+        q3.enable('q3');
 
 
 
@@ -76,6 +81,8 @@ export default class TestLevel extends Phaser.Scene{
 
         TB1.container.on('pointerdown', () =>{
             q1.checkResults();
+            q2.checkResults();
+            q3.checkResults();
         }, this);
         // b.container.setInteractive();
         // this.input.setDraggable(b.container);
