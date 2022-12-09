@@ -1,5 +1,5 @@
 import { 
-    TextButton, Background, TitleText, TextBox, StarCard, DropQuestion, PickOneQuestion, PlanetDescription, Notebook
+    TextButton, Background, TitleText, TextBox, StarCard, DropQuestion, PickOneQuestion, PlanetDescription, Notebook, makeDescription
  } from "../../components";
 
 export default class TestLevel extends Phaser.Scene{
@@ -166,7 +166,9 @@ export default class TestLevel extends Phaser.Scene{
               'Earth');
         P2.enable();
 
-
+        // let mark = makeDescription(this, 'Earth', [100,200], [300,300], [400,400], [0,0]);
+        // mark.defineInteractive();
+        // mark.display();
 
 
 

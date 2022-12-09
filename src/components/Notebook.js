@@ -1,4 +1,4 @@
-import PlanetDescription from "./PlanetDescription";
+import { makeDescription } from "../components";
 
 export default class Notebook{
     /**
@@ -25,80 +25,80 @@ export default class Notebook{
 
         // create list of PlanetDescriptions  
         // should be 1 entry per planet, obviously. this just allows for mixing and matching what is in notebook
-        // planets have pre-determined locations based on my incredible intellect
+        // planet specific coordinates determined by my massive intellect
         this.planets = [];
         for(let i = 0; i < entries.length; i++){
             switch(entries[i]){
                 case 'Earth':
                     this.planets.push(
-                        new PlanetDescription(scene, 
-                            [150, 100], 'earth_lg', 0.5,
-                            [300, 40], 'Earth', 
-                            [300, 95], 'Life',
-                            [600, 160], 'This is the description for Earth. Blah Blah Blah. ifhfhwhwfoeh wefbuiewfhhofwe qwifhwoihwof!!!!')
+                        makeDescription(scene, entries[i],
+                            [150, 100], 
+                            [290, 30], 
+                            [290, 95], 
+                            [600, 160])
                     );
                     break;
                 case 'Mars':
                     this.planets.push(
-                        new PlanetDescription(scene, 
-                            [150, 350], 'mars_lg', 0.5,
-                            [300, 40], 'Mars', 
-                            [300, 95], 'Old Water',
-                            [600, 160], 'This is the description for Mars. GUIVE ME YO BARDS oijegjoierjoieroij woitcher sing me a song :)')
+                        makeDescription(scene, entries[i],
+                            [150, 350],
+                            [290, 30],
+                            [290, 95], 
+                            [600, 160])
                     );
                     break;
                 case 'Venus':
                     this.planets.push(
-                        new PlanetDescription(scene, 
-                            [210, 600], 'venus_lg', 0.5,
-                            [300, 40], 'Venus', 
-                            [300, 95], 'Hottest',
-                            [600, 160], 'This is the description for Venus. SHE IS OUR HOT SISTER. WOAH MOMAMAMAMAM ibusfeuife')
+                        makeDescription(scene, entries[i],
+                            [210, 600],
+                            [290, 30], 
+                            [290, 95],
+                            [600, 160])
                     );
                     break;
                 case 'Mercury':
                     this.planets.push(
-                        new PlanetDescription(scene, 
-                            [470, 600], 'mercury_lg', 0.5,
-                            [300, 40], 'Mercury', 
-                            [300, 95], 'Sun\'s Favorite',
-                            [600, 160], 'This is the description for Mercury. THE EXV IN MY BKJKNK bro get me outta here no cap bussin in my bus ')
+                        makeDescription(scene, entries[i],
+                            [470, 600], 
+                            [290, 30], 
+                            [290, 95],
+                            [600, 160])
                     );
                     break;
                 case 'Jupiter':
                     this.planets.push(
-                        new PlanetDescription(scene, 
-                            [730, 600], 'jupiter_lg', 0.5,
-                            [300, 40], 'Jupiter',
-                            [300, 95], 'Size',
-                            [600, 160], 'This is the description for Jupiter. Cells! At! Wprl! aADUHFIUH ,am i want some bread man yeikes jinkz scoobs')
+                        makeDescription(scene, entries[i],
+                            [730, 600],
+                            [290, 30],
+                            [290, 95],
+                            [600, 160])
                     );
                     break;
                 case 'Saturn':
                     this.planets.push(
-                        new PlanetDescription(scene, 
-                            [1050, 620], 'saturn_lg', 0.2,
-                            [300, 40], 'Saturn', 
-                            [300, 95], 'Rings',
-                            [600, 160], 'This is the description for Saturn. ARUIWQURFIUWEGHIOWEGH AIUIWUA NADSHASBDSA S JAFSJASB !')
+                        makeDescription(scene, entries[i],
+                            [1050, 620],
+                            [290, 30],
+                            [290, 95],
+                            [600, 160])
                     );
                     break;
                 case 'Uranus':
                     this.planets.push(
-                        new PlanetDescription(scene, 
-                            [1050, 400], 'uranus_lg', 0.5,
-                            [300, 40], 'Uranus',
-                            [300, 95], 'IDKYET',
-                            [600, 160], 'This is the description for Uranus. aahasiudas je saod ams bruhhh wow he asiafk ofji[ewoeji[wfoij')
+                        makeDescription(scene, entries[i],
+                            [1050, 400],
+                            [290, 30],
+                            [290, 95],
+                            [600, 160])
                     );
                     break;
                 case 'Neptune':
                     this.planets.push(
-                        new PlanetDescription(scene, 
-                            [1050, 120], 'neptune_lg', 0.5,
-                            [300, 40], 'Neptune',
-                            [300, 95], 'BIGBLUE',
-                            [600, 160], 'This is the description for Neptune. BADL! BALD! BALD 10IERFWEOI efjoiewjf ruh burh b[sa')
+                        makeDescription(scene, entries[i],
+                            [1050, 120],
+                            [290, 30],
+                            [290, 95],
+                            [600, 160])
                     );
                     break;
                 default:

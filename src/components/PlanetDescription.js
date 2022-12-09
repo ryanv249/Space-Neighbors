@@ -1,4 +1,4 @@
-import TextBox from "./TextBox";
+import { TextBox } from "../components";
 
 export default class PlanetDescription {
     /**
@@ -38,10 +38,10 @@ export default class PlanetDescription {
         this.desc = new TextBox(scene, descPos[0], descPos[1], 580, 'PC_c', 20, desc).container
             .setVisible(false);
 
-        this.name = scene.add.bitmapText(namePos[0], namePos[1], 'GBD_w', name, 50)
+        this.name = scene.add.bitmapText(namePos[0], namePos[1], 'GBD_w', name, 60)
             .setVisible(false);
 
-        this.spec = scene.add.bitmapText(specPos[0], specPos[1], 'PC_c', spec, 40)
+        this.spec = scene.add.bitmapText(specPos[0], specPos[1], 'PC_c', spec, 30)
             .setVisible(false);
 
         // components are created invisible. calling scene will determine when to make visible (using hover or otherwise)
@@ -99,4 +99,85 @@ export default class PlanetDescription {
         this.spec.setVisible(false);
     }
 
+}
+
+/**
+ * Returns a PlanetDescription object for the given planet name using the given coordinates.
+ * @param {Phaser.Scene} scene
+ * @param {String} name 
+ * planet name to match 
+ * @param {number[]} imgPos 
+ * x,y coords to place planet image 
+ * @param {number[]} namePos
+ * x,y coords to place planet name 
+ * @param {number[]} specPos 
+ * x,y coords to place planet special characteristic
+ * @param {number[]} descPos 
+ * x,y coords to place planet description
+ * 
+ */
+export function makeDescription(scene, name, imgPos, namePos, specPos, descPos){
+    let ret;
+    switch(name){
+        case 'Earth':
+            ret = new PlanetDescription(scene, 
+                    [imgPos[0], imgPos[1]], 'earth_lg', 0.5,
+                    [namePos[0], namePos[1]], 'Earth', 
+                    [specPos[0], specPos[1]], 'Only Confirmed Life',
+                    [descPos[0], descPos[1]], 'This is the description for Earth. Blah Blah Blah. ifhfhwhwfoeh wefbuiewfhhofwe qwifhwoihwof!!!!');
+            break;
+        case 'Mars':
+            ret = new PlanetDescription(scene, 
+                    [imgPos[0], imgPos[1]], 'mars_lg', 0.5,
+                    [namePos[0], namePos[1]], 'Mars', 
+                    [specPos[0], specPos[1]], 'Ancient Liquid Water',
+                    [descPos[0], descPos[1]], 'This is the description for Mars. GUIVE ME YO BARDS oijegjoierjoieroij woitcher sing me a song :)');
+            break;
+        case 'Venus':
+            ret = new PlanetDescription(scene, 
+                    [imgPos[0], imgPos[1]], 'venus_lg', 0.5,
+                    [namePos[0], namePos[1]], 'Venus', 
+                    [specPos[0], specPos[1]], 'Hottest Surface',
+                    [descPos[0], descPos[1]], 'This is the description for Venus. SHE IS OUR HOT SISTER. WOAH MOMAMAMAMAM ibusfeuife');
+            break;
+        case 'Mercury':
+            ret = new PlanetDescription(scene, 
+                    [imgPos[0], imgPos[1]], 'mercury_lg', 0.5,
+                    [namePos[0], namePos[1]], 'Mercury', 
+                    [specPos[0], specPos[1]], 'Closest to the Sun',
+                    [descPos[0], descPos[1]], 'This is the description for Mercury. THE EXV IN MY BKJKNK bro get me outta here no cap bussin in my bus ');
+            break;
+        case 'Jupiter':
+            ret = new PlanetDescription(scene, 
+                    [imgPos[0], imgPos[1]], 'jupiter_lg', 0.5,
+                    [namePos[0], namePos[1]], 'Jupiter',
+                    [specPos[0], specPos[1]], '71% of planet mass',
+                    [descPos[0], descPos[1]], 'This is the description for Jupiter. Cells! At! Wprl! aADUHFIUH ,am i want some bread man yeikes jinkz scoobs');
+            break;
+        case 'Saturn':
+            ret = new PlanetDescription(scene, 
+                    [imgPos[0], imgPos[1]], 'saturn_lg', 0.2,
+                    [namePos[0], namePos[1]], 'Saturn', 
+                    [specPos[0], specPos[1]], 'Awesome Rings',
+                    [descPos[0], descPos[1]], 'This is the description for Saturn. ARUIWQURFIUWEGHIOWEGH AIUIWUA NADSHASBDSA S JAFSJASB !');
+            break;
+        case 'Uranus':
+            ret = new PlanetDescription(scene, 
+                    [imgPos[0], imgPos[1]], 'uranus_lg', 0.5,
+                    [namePos[0], namePos[1]], 'Uranus',
+                    [specPos[0], specPos[1]], 'Side Spinner',
+                    [descPos[0], descPos[1]], 'This is the description for Uranus. aahasiudas je saod ams bruhhh wow he asiafk ofji[ewoeji[wfoij');
+            break;
+        case 'Neptune':
+            ret = new PlanetDescription(scene, 
+                    [imgPos[0], imgPos[1]], 'neptune_lg', 0.5,
+                    [namePos[0], namePos[1]], 'Neptune',
+                    [specPos[0], specPos[1]], 'Diamond Rain',
+                    [descPos[0], descPos[1]], 'This is the description for Neptune. BADL! BALD! BALD 10IERFWEOI efjoiewjf ruh burh b[sa');
+            break;
+        default:
+            ret = null;
+            break;
+    }
+    return ret;
 }

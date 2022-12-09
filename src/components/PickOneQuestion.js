@@ -1,5 +1,4 @@
-import { makeCard } from "./StarCard";
-import TextButton from "./TextButton";
+import {TextButton, makeCard} from '../components';
 
 export default class PickOneQuestion{
     /**
