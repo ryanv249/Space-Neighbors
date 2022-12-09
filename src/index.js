@@ -10,7 +10,7 @@ var config = {
     type: Phaser.AUTO,
     // size of display (resolution)
     width: 1200,
-    height: 700,
+    height: 720,
     // place game into div called gameArea and center in middle of screen
     scale: {
         parent: "gameArea",

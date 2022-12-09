@@ -100,7 +100,7 @@ export function makeCard(scene, xPos, yPos, planet){
         case 'Venus':
             card = new StarCard(scene, xPos, yPos, 'venus_sm', 'Venus');
             break;
-        case 'default':
+        default:
             card = null;
     }
     return card; 

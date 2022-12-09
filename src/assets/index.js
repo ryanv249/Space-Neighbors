@@ -9,6 +9,7 @@ import star from './tutorial/star.png';
 // misc assets 
 import background from './misc/background.png';
 import notebook from './misc/notebook.png';
+import cancel from './misc/cancel.png';
 
 
 // font assets
@@ -49,7 +50,7 @@ import venus_sm from './planets/venus_sm.png';
 
 export{
     bomb, dude, logo, platform, sky, star,
-    background, notebook,
+    background, notebook, cancel,
     PC_png_blk, PC_png_wte, PC_png_cyn, PC_xml,
     GBD_png_blk, GBD_png_wte, GBD_png_cyn, GBD_xml,
     system, mercury_lg, venus_lg, earth_lg, mars_lg, jupiter_lg, saturn_lg, uranus_lg, neptune_lg,

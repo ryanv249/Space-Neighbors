@@ -1,6 +1,6 @@
 import{
   star,
-  background, notebook,
+  background, notebook, cancel,
   PC_png_blk, PC_png_wte, PC_png_cyn, PC_xml,
   GBD_png_blk, GBD_png_wte, GBD_png_cyn, GBD_xml,
   system, mercury_lg, venus_lg, earth_lg, mars_lg, jupiter_lg, saturn_lg, uranus_lg, neptune_lg,
@@ -17,6 +17,7 @@ export default class Preloader extends Phaser.Scene {
       this.load.image('star', star);
       this.load.image('background', background);
       this.load.image('notebook', notebook);
+      this.load.image('cancel', cancel);
 
       this.load.image('system', system);
       this.load.image('mercury_lg', mercury_lg);

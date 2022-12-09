@@ -10,7 +10,7 @@ export default class PlanetDescription {
      * @param {Phaser.Scene} scene 
      * @param {number[]} imgPos 
      * x,y coords to place planet image 
-     * @param {String} img 
+     * @param {*} img 
      * planet image
      * @param {number} imgScale
      * set size scaling of planet image
@@ -36,14 +36,13 @@ export default class PlanetDescription {
             // tint image so that can highlight on hover
             .setTint(0x8C8C8C);
 
-        this.desc = new TextBox(scene, descPos[0], descPos[1], 500, 'main_font_w', 20, desc).container
+        this.desc = new TextBox(scene, descPos[0], descPos[1], 580, 'main_font_c', 20, desc).container
             .setVisible(false);
 
-        // using TextButton class due to robust design
-        this.name = new TextButton(scene, namePos[0], namePos[1], -1, -1, -1, 0x00, 0, 40, 'main_font_c', name).text
+        this.name = scene.add.bitmapText(namePos[0], namePos[1], 'title_font_w', name, 50)
             .setVisible(false);
 
-        this.spec = new TextButton(scene, specPos[0], specPos[1], -1, -1, -1, 0x00, 0, 50, 'main_font_c', spec).text
+        this.spec = scene.add.bitmapText(specPos[0], specPos[1], 'main_font_c', spec, 40)
             .setVisible(false);
 
         // components are created invisible. calling scene will determine when to make visible (using hover or otherwise)
@@ -74,7 +73,7 @@ export default class PlanetDescription {
 
 
     /**
-     * Make this PlanetDescription's image visible and give it an input object.
+     * Make this PlanetDescription visible and give it an input object.
      */
     display(){
         // images are circles, create new hitarea to reflect this 
@@ -100,6 +99,5 @@ export default class PlanetDescription {
         this.name.setVisible(false);
         this.spec.setVisible(false);
     }
-    
 
 }
