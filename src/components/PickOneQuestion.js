@@ -34,7 +34,7 @@ export default class PickOneQuestion{
 
         // create box, text components
         this.box = scene.add.rectangle(xPos, yPos, maxWidth*1.1, minHeight, 0x00, 0.6);
-        this.text = scene.add.bitmapText(xPos, yPos, 'main_font_c', question, labelSize)
+        this.text = scene.add.bitmapText(xPos, yPos, 'PC_c', question, labelSize)
             .setMaxWidth(maxWidth);
 
         // store button type
@@ -48,7 +48,7 @@ export default class PickOneQuestion{
             }
             else{
                 // TextButtons 
-                this.buttons.push(new TextButton(scene, xPos, yPos, maxWidth*0.9, -1, -1, 0x8D4DE2, 0.7, choiceSize, 'main_font_w', choices[i]));
+                this.buttons.push(new TextButton(scene, xPos, yPos, maxWidth*0.9, -1, -1, 0x8D4DE2, 0.7, choiceSize, 'PC_w', choices[i]));
             }
         }
 
@@ -123,11 +123,11 @@ export default class PickOneQuestion{
         if(this.recentAnswer !== null){
             if(this.type === 0){
                 this.recentButton.container.setInteractive();
-                this.recentButton.text.setFont('title_font_w');
+                this.recentButton.text.setFont('GBD_w');
             }
             else{
                 this.recentButton.background.setInteractive();
-                this.recentButton.text.setFont('main_font_w');
+                this.recentButton.text.setFont('PC_w');
             }
         }
 
@@ -139,12 +139,12 @@ export default class PickOneQuestion{
         if(this.type === 0){
             // StarCards
             this.recentButton.container.disableInteractive();
-            this.recentButton.text.setFont('title_font_b');
+            this.recentButton.text.setFont('GBD_b');
         }
         else{
             // TextButtons
             this.recentButton.background.disableInteractive();
-            this.recentButton.text.setFont('main_font_b');
+            this.recentButton.text.setFont('PC_b');
         }        
     }
 
@@ -202,12 +202,12 @@ export default class PickOneQuestion{
                 // incorrect response. make it red, remove point.
                 if(this.type === 0){
                     // StarCards
-                    this.recentButton.text.setFont('title_font_w');
+                    this.recentButton.text.setFont('GBD_w');
                     this.recentButton.card.setFillStyle(0xDF2727);
                 }
                 else{
                     // TextButtons
-                    this.recentButton.text.setFont('main_font_w');
+                    this.recentButton.text.setFont('PC_w');
                     this.recentButton.background.setFillStyle(0xDF2727);
                 }
                 // subtract point 

@@ -1,6 +1,5 @@
 import{
-  star,
-  background, notebook, cancel,
+  star, background, notebook, cancel,
   PC_png_blk, PC_png_wte, PC_png_cyn, PC_xml,
   GBD_png_blk, GBD_png_wte, GBD_png_cyn, GBD_xml,
   system, mercury_lg, venus_lg, earth_lg, mars_lg, jupiter_lg, saturn_lg, uranus_lg, neptune_lg,
@@ -38,13 +37,13 @@ export default class Preloader extends Phaser.Scene {
       this.load.image('uranus_sm', uranus_sm);
       this.load.image('neptune_sm', neptune_sm);
 
-      this.load.bitmapFont('main_font_b', PC_png_blk, PC_xml);
-      this.load.bitmapFont('main_font_w', PC_png_wte, PC_xml);
-      this.load.bitmapFont('main_font_c', PC_png_cyn, PC_xml);
+      this.load.bitmapFont('PC_b', PC_png_blk, PC_xml);
+      this.load.bitmapFont('PC_w', PC_png_wte, PC_xml);
+      this.load.bitmapFont('PC_c', PC_png_cyn, PC_xml);
 
-      this.load.bitmapFont('title_font_b', GBD_png_blk, GBD_xml);
-      this.load.bitmapFont('title_font_w', GBD_png_wte, GBD_xml);
-      this.load.bitmapFont('title_font_c', GBD_png_cyn, GBD_xml);
+      this.load.bitmapFont('GBD_b', GBD_png_blk, GBD_xml);
+      this.load.bitmapFont('GBD_w', GBD_png_wte, GBD_xml);
+      this.load.bitmapFont('GBD_c', GBD_png_cyn, GBD_xml);
     }
   
     create() {

@@ -12,7 +12,7 @@ export default class StarCard{
         // I don't entirely understand how positioning with containers work
         // As it stands, everything but the container needs to be 0.5 origin and 0,0. 
         this.card = scene.add.rectangle(0, 0, 100, 65, 0x8D4DE2, 0.7);
-        this.text = scene.add.bitmapText(0, 0, 'title_font_w', label, 20);
+        this.text = scene.add.bitmapText(0, 0, 'GBD_w', label, 20);
         this.img = scene.add.image(0, 0, imgId);
 
         // fix origins for components

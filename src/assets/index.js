@@ -1,17 +1,3 @@
-// tutorial assets
-import bomb from './tutorial/bomb.png';
-import dude from './tutorial/dude.png';
-import logo from './tutorial/logo.png';
-import platform from './tutorial/platform.png';
-import sky from './tutorial/sky.png';
-import star from './tutorial/star.png';
-
-// misc assets 
-import background from './misc/background.png';
-import notebook from './misc/notebook.png';
-import cancel from './misc/cancel.png';
-
-
 // font assets
 import PC_png_blk from './fonts/PartyConfetti/PC_black.png';
 import PC_png_cyn from './fonts/PartyConfetti/PC_cyan.png';
@@ -24,6 +10,13 @@ import GBD_png_wte from './fonts/Grobold/GBD_white.png';
 import GBD_xml from './fonts/Grobold/GBD.xml';
 
 
+// misc assets
+import star from './misc/star.png';
+import background from './misc/background.png';
+import notebook from './misc/notebook.png';
+import cancel from './misc/cancel.png';
+
+
 // large planet assets 
 import earth_lg from './planets/earth_lg.png';
 import jupiter_lg from './planets/jupiter_lg.png';
@@ -34,6 +27,7 @@ import saturn_lg from './planets/saturn_lg.png';
 import uranus_lg from './planets/uranus_lg.png';
 import venus_lg from './planets/venus_lg.png';
 import system from './planets/system.png';
+
 
 // small planet assets 
 import earth_sm from './planets/earth_sm.png';
@@ -49,8 +43,7 @@ import venus_sm from './planets/venus_sm.png';
 
 
 export{
-    bomb, dude, logo, platform, sky, star,
-    background, notebook, cancel,
+    star, background, notebook, cancel,
     PC_png_blk, PC_png_wte, PC_png_cyn, PC_xml,
     GBD_png_blk, GBD_png_wte, GBD_png_cyn, GBD_xml,
     system, mercury_lg, venus_lg, earth_lg, mars_lg, jupiter_lg, saturn_lg, uranus_lg, neptune_lg,

@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 
 import {
-    Preloader, MainMenu, TutorialScene, TestLevel, ScoreDisplay,
+    Preloader, MainMenu, TestLevel, ScoreDisplay,
     EarthLevel, MarsLevel, VenusLevel, MercuryLevel, JupiterLevel, SaturnLevel, UranusLevel, NeptuneLevel
 } from "./scenes/";
 
@@ -16,18 +16,9 @@ var config = {
         parent: "gameArea",
         autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
     },
-    // make call to arcade physics system 
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: {y : 300},
-            debug: false
-        }
-    },
-
     scene: 
     [ 
-        Preloader, MainMenu, ScoreDisplay, TutorialScene, TestLevel,
+        Preloader, MainMenu, ScoreDisplay, TestLevel,
         EarthLevel, MarsLevel, VenusLevel, MercuryLevel, JupiterLevel, SaturnLevel, UranusLevel, NeptuneLevel
     ]
 };

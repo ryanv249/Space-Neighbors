@@ -1,5 +1,4 @@
 import TextBox from "./TextBox";
-import TextButton from "./TextButton";
 
 export default class PlanetDescription {
     /**
@@ -36,13 +35,13 @@ export default class PlanetDescription {
             // tint image so that can highlight on hover
             .setTint(0x8C8C8C);
 
-        this.desc = new TextBox(scene, descPos[0], descPos[1], 580, 'main_font_c', 20, desc).container
+        this.desc = new TextBox(scene, descPos[0], descPos[1], 580, 'PC_c', 20, desc).container
             .setVisible(false);
 
-        this.name = scene.add.bitmapText(namePos[0], namePos[1], 'title_font_w', name, 50)
+        this.name = scene.add.bitmapText(namePos[0], namePos[1], 'GBD_w', name, 50)
             .setVisible(false);
 
-        this.spec = scene.add.bitmapText(specPos[0], specPos[1], 'main_font_c', spec, 40)
+        this.spec = scene.add.bitmapText(specPos[0], specPos[1], 'PC_c', spec, 40)
             .setVisible(false);
 
         // components are created invisible. calling scene will determine when to make visible (using hover or otherwise)

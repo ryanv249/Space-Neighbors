@@ -4,7 +4,7 @@ export default class TitleText extends Phaser.GameObjects.BitmapText {
         scene,
         scene.cameras.main.width / 2,
         scene.cameras.main.height / 2 - offset,
-        'title_font_c',
+        'GBD_c',
         label,
         size
       );

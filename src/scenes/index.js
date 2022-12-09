@@ -2,10 +2,9 @@
 import MainMenu from "./MainMenu";
 import Preloader from "./Preloader";
 import ScoreDisplay from "./ScoreDisplay";
-import TutorialScene from "./TutorialScene";
-import TestLevel from "./levels/LevelTemplate";
 
 // level scenes 
+import TestLevel from "./levels/TestLevel";
 import EarthLevel from './levels/Earth';
 import MarsLevel from './levels/Mars';
 import VenusLevel from './levels/Venus';
@@ -16,7 +15,7 @@ import UranusLevel from './levels/Uranus';
 import NeptuneLevel from './levels/Neptune';
 
 export {
-    Preloader, ScoreDisplay,  MainMenu, TutorialScene, TestLevel,
+    Preloader, ScoreDisplay, MainMenu, TestLevel,
     EarthLevel, MarsLevel, VenusLevel, MercuryLevel, JupiterLevel, SaturnLevel, UranusLevel, NeptuneLevel
 
 };

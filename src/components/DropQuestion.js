@@ -24,7 +24,7 @@ export default class DropQuestion{
         this.box = scene.add.rectangle(xPos, yPos, 350, 0, 0x00, 0.6);
 
         // create text
-        this.text = scene.add.bitmapText(xPos, yPos, 'main_font_c', question, 15)
+        this.text = scene.add.bitmapText(xPos, yPos, 'PC_c', question, 15)
             .setOrigin(0.5)
             .setMaxWidth(300);
 
