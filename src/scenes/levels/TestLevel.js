@@ -172,12 +172,12 @@ export default class TestLevel extends Phaser.Scene{
 
 
         TB1.container.on('pointerdown', () =>{
-            q1.checkResults();
+            console.log(q1.checkResults());
             // q2.checkResults();
             // pd1.hide();
         //     q3.checkResults();
-            P1.checkResults();
-            P2.checkResults();
+            console.log(P1.checkResults());
+            console.log(P2.checkResults());
             // this.score++;
             // this.registry.set('score', this.score);
             

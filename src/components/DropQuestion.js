@@ -206,7 +206,7 @@ export default class DropQuestion{
     checkResults(){
         if(!this.zone.input.enabled){
             // prevent score being increased from completed zones
-            return;
+            return false;
         }
         for(let i = 0; i < this.storedNames.length; i++){
             if(this.answers.includes(this.storedNames[i])){
@@ -223,7 +223,7 @@ export default class DropQuestion{
                 // remove point 
                 this.container.scene.score--;
                 this.container.scene.registry.set('score', this.container.scene.score);
-                return;
+                return false;
             }
         }
         // if here, all given answers correct.
@@ -236,11 +236,13 @@ export default class DropQuestion{
             // disable zone and make green 
             this.zone.disableInteractive();
             this.backDrop.setFillStyle(0x2FC325);
+            return true;
         }
         else{
             // nothing wrong, but we haven't gotten all correct yet. 
             // set color to be white to indicate no loss but also no gain 
             this.backDrop.setFillStyle(0xffffff);
+            return false;
         }
     }
     

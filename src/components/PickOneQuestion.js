@@ -161,10 +161,12 @@ export default class PickOneQuestion{
      */
     checkResults(){
         // has a button been pressed? 
+        let result = false;
         if(this.recentAnswer !== null){
             // has the correct button been pressed?
             if(this.recentAnswer === this.answer){
                 // question complete!
+                result = true;
                 // completion point
                 this.box.scene.score++;
 
@@ -182,7 +184,6 @@ export default class PickOneQuestion{
                     // make last pressed green 
                     this.recentButton.card.setFillStyle(0x2FC325);
                 }
-
                 else{
                     // TextButtons
                     for(let i = 0; i < this.buttons.length; i++){
@@ -196,7 +197,6 @@ export default class PickOneQuestion{
                     // make last pressed green 
                     this.recentButton.background.setFillStyle(0x2FC325);
                 }
-
             }
             else{
                 // incorrect response. make it red, remove point.
@@ -221,6 +221,6 @@ export default class PickOneQuestion{
             this.recentButton = null;
             this.recentAnswer = null;
         }
-        
+        return result;
     }
 }
