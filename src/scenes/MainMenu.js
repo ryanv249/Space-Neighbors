@@ -13,7 +13,7 @@ export default class MainMenu extends Phaser.Scene {
   
     create() {
       new Background(this);
-      new TitleText(this, 250, 'StarCards', 128);
+      new TitleText(this, 250, 'Space Neighbors', 128);
 
       // create menu buttons
       const b1 = new TextButton(this, 0, 0, -1, -1, -1, 0x8D4DE2, 1, 80, 'GBD_b', 'Learn');

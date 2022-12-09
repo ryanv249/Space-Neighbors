@@ -146,6 +146,10 @@ export default class TestLevel extends Phaser.Scene{
         my.enable(true, () => {});
         np.enable(true, () => {});
 
+        // scuffed backbutton verified that registry doing its thing 
+        // let back = new TextButton(this, 900, 400, -1, -1, -1, 0x00, 1, 40, 'PC_w', 'BACK');
+        // back.enable(() => {this.scene.start('MainMenu')}, () => {}, () => {});
+
 
 
 
@@ -156,11 +160,11 @@ export default class TestLevel extends Phaser.Scene{
 
         P1.enable();
 
-        // let P2 = new PickOneQuestion(this, 300, 300, 300, 21, 0, 22, 22,
-        //     'BRUH who let you in here!123213 This is ridiculous',
-        //      ['Earth', 'Venus', 'Mars', 'Jupiter'],
-        //       'Earth');
-        // P2.enable();
+        let P2 = new PickOneQuestion(this, 300, 300, 300, 21, 0, 22, 22,
+            'BRUH who let you in here!123213 This is ridiculous',
+             ['Earth', 'Venus', 'Mars', 'Jupiter'],
+              'Earth');
+        P2.enable();
 
 
 
@@ -173,7 +177,7 @@ export default class TestLevel extends Phaser.Scene{
             // pd1.hide();
         //     q3.checkResults();
             P1.checkResults();
-            // P2.checkResults();
+            P2.checkResults();
             // this.score++;
             // this.registry.set('score', this.score);
             
