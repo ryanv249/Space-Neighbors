@@ -78,9 +78,6 @@ export default class TestLevel extends Phaser.Scene{
         my.enable(true, () => {});
         np.enable(true, () => {});
 
-        TB1.container.on('wheel', function(pointer, deltaX, deltaY, deltaZ){
-            TB1.container.setY(TB1.container.y + deltaY *0.3);
-        }, this);
 
 
 
@@ -97,9 +94,30 @@ export default class TestLevel extends Phaser.Scene{
         //       'Earth');
         // P2.enable();
 
+        // this.add.image(200,200,'earth_lg');
+        let pd1 = new PlanetDescription(this, 
+            [300, 200], 'earth_lg', 0.5,
+            [700, 400], 'Earth', 
+            [800, 600], 'Life',
+            [400, 500], 'This is the description for earth. Blah Blah Blah. ifhfhwhwfoeh wefbuiewfhhofwe qwifhwoihwof!!!!');
+
+        pd1.display();
+        pd1.defineInteractive();
+
+        let pd2 = new PlanetDescription(this, 
+            [300, 400], 'jupiter_lg', 0.5,
+            [800, 400], 'Jupiter',
+            [900, 600], 'Size',
+            [600, 500], 'This is the description for Jupiter. Cells! At! Wprl! aADUHFIUH ,am i want some bread man yeikes jinkz scoobs');
+
+        pd2.display();
+        pd2.defineInteractive();
+
+
         TB1.container.on('pointerdown', () =>{
             q1.checkResults();
             q2.checkResults();
+            pd1.hide();
         //     q3.checkResults();
             // P1.checkResults();
             // P2.checkResults();
@@ -108,11 +126,12 @@ export default class TestLevel extends Phaser.Scene{
             
         }, this);
 
-        // this.add.image(200,200,'earth_lg');
-        let pd1 = new PlanetDescription(this, [300, 200], [400, 500], 'earth_lg', 'This is the description for earth. Blah Blah Blah. ifhfhwhwfoeh wefbuiewfhhofwe qwifhwoihwof!!!!');
+        TB1.container.on('wheel', function(pointer, deltaX, deltaY, deltaZ){
+            TB1.container.setY(TB1.container.y + deltaY *0.3);
+            pd1.display();
+        }, this);
 
-        pd1.display();
-        pd1.defineInteractive();
+
 
         // b.container.setInteractive();
         // this.input.setDraggable(b.container);
