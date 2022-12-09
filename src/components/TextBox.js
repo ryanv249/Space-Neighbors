@@ -27,7 +27,7 @@ export default class TextBox{
 
         // center text in box 
         this.box.setOrigin(0.5);
-        Phaser.Display.Align.In.Center(this.text, this.box, 0, this.text.height*0.03);
+        Phaser.Display.Align.In.Center(this.text, this.box, 0,0);
 
         // create container to allow for drags (probably won't use this)
         this.container = scene.add.container(xPos, yPos, [this.box, this.text]);

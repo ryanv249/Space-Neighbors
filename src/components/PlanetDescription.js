@@ -35,7 +35,7 @@ export default class PlanetDescription {
             // tint image so that can highlight on hover
             .setTint(0x8C8C8C);
 
-        this.desc = new TextBox(scene, descPos[0], descPos[1], 580, 'PC_c', 20, desc).container
+        this.desc = new TextBox(scene, descPos[0], descPos[1], 580, 'PC_c', 19, desc).container
             .setVisible(false);
 
         this.name = scene.add.bitmapText(namePos[0], namePos[1], 'GBD_w', name, 60)
@@ -123,14 +123,22 @@ export function makeDescription(scene, name, imgPos, namePos, specPos, descPos){
             ret = new PlanetDescription(scene, 
                     [imgPos[0], imgPos[1]], 'earth_lg', 0.5,
                     [namePos[0], namePos[1]], 'Earth', 
-                    [specPos[0], specPos[1]], 'Only Confirmed Life',
-                    [descPos[0], descPos[1]], 'This is the description for Earth. Blah Blah Blah. ifhfhwhwfoeh wefbuiewfhhofwe qwifhwoihwof!!!!');
+                    [specPos[0], specPos[1]], 'Huge Moon',
+                    [descPos[0], descPos[1]], 
+                    'Earth is unique in many ways. For starters, its Moon is by far the largest in the system. ' + 
+                    'The Moon is 1/3 the size of Earth! Mars\' moons are tiny, Venus and Mercury don\'t even have one!\n\n' +
+                    'It is the only local planet to currently have liquid water on its surface. Earth\'s surface is also always fresh thanks to it\'s unique system of Plate Tectonics: ' +
+                    'Basically the rocks which make up Earth\'s inner layers have enough moisture that they can form into giant pieces which then break apart and rub into eachother. ' +
+                    'This system is responsible for volcanoes and earthquakes!\n\n' + 
+                    'The atmosphere is 78% Nitrogen and 21% Oxygen, which is very different from the other terrestrial (rocky) planets.\n\n' + 
+                    'Earth is Venus\' "sister" planet due to their similar sizes and distances from the sun. Mars is kind of like a younger cousin!'
+                    );
             break;
         case 'Mars':
             ret = new PlanetDescription(scene, 
                     [imgPos[0], imgPos[1]], 'mars_lg', 0.5,
                     [namePos[0], namePos[1]], 'Mars', 
-                    [specPos[0], specPos[1]], 'Ancient Liquid Water',
+                    [specPos[0], specPos[1]], 'Ancient Surface Water',
                     [descPos[0], descPos[1]], 'This is the description for Mars. GUIVE ME YO BARDS oijegjoierjoieroij woitcher sing me a song :)');
             break;
         case 'Venus':

@@ -33,72 +33,72 @@ export default class Notebook{
                     this.planets.push(
                         makeDescription(scene, entries[i],
                             [150, 100], 
-                            [290, 30], 
-                            [290, 95], 
-                            [600, 160])
+                            [280, 30], 
+                            [280, 95], 
+                            [600, 290])
                     );
                     break;
                 case 'Mars':
                     this.planets.push(
                         makeDescription(scene, entries[i],
                             [150, 350],
-                            [290, 30],
-                            [290, 95], 
-                            [600, 160])
+                            [280, 30],
+                            [280, 95], 
+                            [600, 260])
                     );
                     break;
                 case 'Venus':
                     this.planets.push(
                         makeDescription(scene, entries[i],
                             [210, 600],
-                            [290, 30], 
-                            [290, 95],
-                            [600, 160])
+                            [280, 30], 
+                            [280, 95],
+                            [600, 260])
                     );
                     break;
                 case 'Mercury':
                     this.planets.push(
                         makeDescription(scene, entries[i],
                             [470, 600], 
-                            [290, 30], 
-                            [290, 95],
-                            [600, 160])
+                            [280, 30], 
+                            [280, 95],
+                            [600, 260])
                     );
                     break;
                 case 'Jupiter':
                     this.planets.push(
                         makeDescription(scene, entries[i],
                             [730, 600],
-                            [290, 30],
-                            [290, 95],
-                            [600, 160])
+                            [280, 30],
+                            [280, 95],
+                            [600, 260])
                     );
                     break;
                 case 'Saturn':
                     this.planets.push(
                         makeDescription(scene, entries[i],
                             [1050, 620],
-                            [290, 30],
-                            [290, 95],
-                            [600, 160])
+                            [280, 30],
+                            [280, 95],
+                            [600, 260])
                     );
                     break;
                 case 'Uranus':
                     this.planets.push(
                         makeDescription(scene, entries[i],
                             [1050, 400],
-                            [290, 30],
-                            [290, 95],
-                            [600, 160])
+                            [280, 30],
+                            [280, 95],
+                            [600, 260])
                     );
                     break;
                 case 'Neptune':
                     this.planets.push(
                         makeDescription(scene, entries[i],
                             [1050, 120],
-                            [290, 30],
-                            [290, 95],
-                            [600, 160])
+                            [280, 30],
+                            [280, 95],
+                            [600, 260])
                     );
                     break;
                 default:
