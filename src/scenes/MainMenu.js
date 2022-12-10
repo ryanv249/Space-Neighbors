@@ -33,7 +33,7 @@ export default class MainMenu extends Phaser.Scene {
         () => b1.background.setFillStyle(0x8D4DE2)
         );
 
-      const b2 = new TextButton(this, 0, 0, -1, -1, -1, 0x8D4DE2, 1, 80, 'GBD_b', 'Arcade');
+      const b2 = new TextButton(this, 0, 0, -1, -1, -1, 0x8D4DE2, 1, 80, 'GBD_b', 'Quiz');
       b2.enable( 
         () => console.log('clicked2', b2),
         () => b2.background.setFillStyle(0x409BE5),
@@ -45,7 +45,7 @@ export default class MainMenu extends Phaser.Scene {
       let menu = this.add.rectangle(0, this.height/2 - 200, this.width, 200, 0x00, 0).setOrigin(0);
       Phaser.Display.Align.In.LeftCenter(b1.background, menu, -200,0);
       b1.align(0, b1.offsetY*0.5);
-      Phaser.Display.Align.In.RightCenter(b2.background, menu, -200,0);
+      Phaser.Display.Align.In.RightCenter(b2.background, menu, -250,0);
       b2.align(0, b1.offsetY*0.7);
 
     }
