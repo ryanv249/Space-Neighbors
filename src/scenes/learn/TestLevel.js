@@ -16,7 +16,7 @@ export default class TestLevel extends Phaser.Scene{
     }
 
     create(){
-        this.scene.launch('ScoreDisplay', [90, 70]).bringToTop('ScoreDisplay');
+        // this.scene.launch('ScoreDisplay', [90, 70]).bringToTop('ScoreDisplay');
         new Background(this);
         new TitleText(this, 280,  'Level 0: The Void', 70);
 

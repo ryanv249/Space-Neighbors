@@ -18,7 +18,7 @@ export default class MainMenu extends Phaser.Scene {
       // create menu buttons
       const b1 = new TextButton(this, 0, 0, -1, -1, -1, 0x8D4DE2, 1, 80, 'GBD_b', 'Learn');
       b1.enable(
-        () => this.scene.start('TestLevel'),
+        () => this.scene.start('EarthLevel'),
         () => b1.background.setFillStyle(0x409BE5),
         () => b1.background.setFillStyle(0x8D4DE2)
         );

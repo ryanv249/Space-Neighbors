@@ -35,10 +35,20 @@ export default class TextButton{
         this.text.setMaxWidth((wrapWidth !== -1 ? wrapWidth : this.text.width));
 
         // set base background size
-        if(forceW !== -1 || forceH !== -1){
-            // some dimension (or both) overriden
-            this.background.width = forceW === -1 ? this.text.width : forceW;
-            this.background.height = forceH === -1 ? this.text.height : forceH;
+        if(forceW !== -1 && forceH === -1){
+            // width override
+            this.background.width = forceW;
+            this.background.height = this.text.height*1.1;
+        }
+        else if(forceW === -1 && forceH !== -1){
+            // height override
+            this.background.width = this.text.width*1.1;
+            this.background.height = forceH;  
+        }
+        else if(forceW !== -1 && forceH !== -1){
+            // full override
+            this.background.width = forceW;
+            this.background.height = forceH;  
         }
         else{
             // background fully scaled to text

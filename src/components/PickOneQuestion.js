@@ -32,7 +32,7 @@ export default class PickOneQuestion{
         this.answer = answer; 
 
         // create box, text components
-        this.box = scene.add.rectangle(xPos, yPos, maxWidth*1.1, minHeight, 0x00, 0.6);
+        this.box = scene.add.rectangle(xPos, yPos, maxWidth*1.05, minHeight, 0x00, 0.6);
         this.text = scene.add.bitmapText(xPos, yPos, 'PC_c', question, labelSize)
             .setMaxWidth(maxWidth);
 
@@ -47,7 +47,7 @@ export default class PickOneQuestion{
             }
             else{
                 // TextButtons 
-                this.buttons.push(new TextButton(scene, xPos, yPos, maxWidth*0.9, -1, -1, 0x8D4DE2, 0.7, choiceSize, 'PC_w', choices[i]));
+                this.buttons.push(new TextButton(scene, xPos, yPos, maxWidth*0.9, maxWidth*0.95, -1, 0x8D4DE2, 0.7, choiceSize, 'PC_w', choices[i]));
             }
         }
 
@@ -63,17 +63,17 @@ export default class PickOneQuestion{
         }
         this.box.height = 20 + (neededHeight > minHeight *1.1 ? neededHeight*1.2: minHeight*1.1);
         // TextButtons need a bit more space
-        if(type === 1)this.box.height += 5*choices.length;
+        if(type === 1)this.box.height += 10*choices.length;
 
         // reset box origin, now that size finalized 
         this.box.setOrigin(0.5);
         // arrange components 
         Phaser.Display.Align.In.TopCenter(this.text, this.box, 0, -20);
-        Phaser.Display.Align.In.BottomCenter(this.buttons[0].container, this.box, 0, -10);
+        Phaser.Display.Align.In.BottomCenter(this.buttons[0].container, this.box, 0, -15);
         // TextButtons have special alignment function
         if(type === 1) this.buttons[0].align();
         for(let i = 1; i < choices.length; i++) {
-            Phaser.Display.Align.To.TopCenter(this.buttons[i].container, this.buttons[i - 1].container, 0, 10);
+            Phaser.Display.Align.To.TopCenter(this.buttons[i].container, this.buttons[i - 1].container, 0, 15);
             if(type === 1) this.buttons[i].align();
         }
 

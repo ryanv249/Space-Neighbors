@@ -128,13 +128,13 @@ export function makeDescription(scene, name, imgPos, namePos, specPos, descPos){
                     [namePos[0], namePos[1]], 'Earth', 
                     [specPos[0], specPos[1]], 'Water Cycle',
                     [descPos[0], descPos[1]], 
-                    'Earth is very unique. For example its Moon is the 5th largest in the system at 1/3 the size of Earth! The other rocky planets\' don\'t even compare: ' + 
+                    'Earth is very unique. For starters, its Moon is the 5th largest in the system at 1/3 the size of Earth! The other Terrestrial moons don\'t even compare: ' + 
                     'Mars\' 2 moons are tiny while Venus and Mercury don\'t even have moons! ' +
                     'It is the only local planet to currently have liquid water on its surface. \n\n' + 
                     'Earth\'s surface is fresh thanks to it\'s unique system of Plate Tectonics:\n' +
                     'Basically the rocks which make up Earth\'s inner layers are thin and wet enough to form into giant pieces which then break apart and rub into eachother. ' +
-                    'This system is responsible for volcanoes and earthquakes. It is also one reason why Earth has almost no craters on its surface: they get filled in over time!\n\n' + 
-                    'Another reason for this lack of craters is weather from the water cycle which is made possible by Earth\'s unique atmosphere! ' +
+                    'This system is responsible for volcanoes and earthquakes. It is part of the reason why Earth has almost no craters on its surface: the top layer is always being replaced! ' + 
+                    'The other part is the water cycle, which helps by weathering any rocks that come up to the surface.\n\nThe water cycle is made possible by Earth\'s unique atmosphere! ' +
                     'Earth\'s atmosphere is 78% Nitrogen and 21% Oxygen, which is very different from the other terrestrial (rocky) planets: ' + 
                     'Both Mars and Venus have atmospheres which are 95% C02 while Mercury basically doesn\'t have an atmosphere. Earth really is special!'
                     );

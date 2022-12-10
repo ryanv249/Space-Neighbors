@@ -4,15 +4,15 @@ import Preloader from "./Preloader";
 import ScoreDisplay from "./ScoreDisplay";
 
 // level scenes 
-import TestLevel from "./levels/TestLevel";
-import EarthLevel from './levels/Earth';
-import MarsLevel from './levels/Mars';
-import VenusLevel from './levels/Venus';
-import MercuryLevel from './levels/Mercury';
-import JupiterLevel from './levels/Jupiter';
-import SaturnLevel from './levels/Saturn';
-import UranusLevel from './levels/Uranus';
-import NeptuneLevel from './levels/Neptune';
+import TestLevel from "./learn/TestLevel";
+import EarthLevel from './learn/Earth';
+import MarsLevel from './learn/Mars';
+import VenusLevel from './learn/Venus';
+import MercuryLevel from './learn/Mercury';
+import JupiterLevel from './learn/Jupiter';
+import SaturnLevel from './learn/Saturn';
+import UranusLevel from './learn/Uranus';
+import NeptuneLevel from './learn/Neptune';
 
 export {
     Preloader, ScoreDisplay, MainMenu, TestLevel,

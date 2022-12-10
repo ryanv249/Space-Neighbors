@@ -9,6 +9,8 @@ import PickOneQuestion from './PickOneQuestion';
 import PlanetDescription from './PlanetDescription';
 import { makeDescription } from './PlanetDescription';
 import Notebook from './Notebook';
+import InfoScreen from './InfoScreen';
+import LevelComplete from './LevelComplete';
 
 export {
     Background,
@@ -19,5 +21,7 @@ export {
     DropQuestion,
     PickOneQuestion,
     PlanetDescription, makeDescription,
-    Notebook
+    Notebook,
+    InfoScreen,
+    LevelComplete
 };

@@ -160,7 +160,7 @@ export default class Notebook{
 
         // show and enable the offSwitch
         this.offSwitch.setVisible(true);
-        this.offSwitch.setInteractive();
+        this.offSwitch.setInteractive({useHandCursor: true});
 
         // enable all entries 
         this.planets.forEach(entry => {
