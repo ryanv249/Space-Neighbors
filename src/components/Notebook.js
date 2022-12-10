@@ -44,7 +44,7 @@ export default class Notebook{
                             [150, 350],
                             [280, 30],
                             [280, 95], 
-                            [600, 260])
+                            [600, 290])
                     );
                     break;
                 case 'Venus':
@@ -53,7 +53,7 @@ export default class Notebook{
                             [210, 600],
                             [280, 30], 
                             [280, 95],
-                            [600, 260])
+                            [600, 290])
                     );
                     break;
                 case 'Mercury':
@@ -62,7 +62,7 @@ export default class Notebook{
                             [470, 600], 
                             [280, 30], 
                             [280, 95],
-                            [600, 260])
+                            [600, 290])
                     );
                     break;
                 case 'Jupiter':
@@ -71,7 +71,7 @@ export default class Notebook{
                             [730, 600],
                             [280, 30],
                             [280, 95],
-                            [600, 260])
+                            [600, 290])
                     );
                     break;
                 case 'Saturn':
@@ -80,7 +80,7 @@ export default class Notebook{
                             [1050, 620],
                             [280, 30],
                             [280, 95],
-                            [600, 260])
+                            [600, 290])
                     );
                     break;
                 case 'Uranus':
@@ -89,7 +89,7 @@ export default class Notebook{
                             [1050, 400],
                             [280, 30],
                             [280, 95],
-                            [600, 260])
+                            [600, 290])
                     );
                     break;
                 case 'Neptune':
@@ -98,7 +98,7 @@ export default class Notebook{
                             [1050, 120],
                             [280, 30],
                             [280, 95],
-                            [600, 260])
+                            [600, 290])
                     );
                     break;
                 default:
