@@ -15,6 +15,16 @@ export default class MainMenu extends Phaser.Scene {
       new Background(this);
       new TitleText(this, 250, 'Space Neighbors', 128);
 
+      // decorate screen
+      this.add.image(100, 400, 'mercury_lg').setScale(0.3);
+      this.add.image(400, 400, 'venus_lg').setScale(0.3);
+      this.add.image(750, 400, 'earth_lg').setScale(0.32);
+      this.add.image(1100, 400, 'mars_lg').setScale(0.3);
+      this.add.image(150, 600, 'jupiter_lg').setScale(0.3);
+      this.add.image(450, 600, 'saturn_lg').setScale(0.2);
+      this.add.image(700, 600, 'uranus_lg').setScale(0.3);
+      this.add.image(1050, 600, 'neptune_lg').setScale(0.35);
+
       // create menu buttons
       const b1 = new TextButton(this, 0, 0, -1, -1, -1, 0x8D4DE2, 1, 80, 'GBD_b', 'Learn');
       b1.enable(
@@ -32,10 +42,10 @@ export default class MainMenu extends Phaser.Scene {
 
 
       // arrange buttons on screen
-      let menu = this.add.rectangle(this.width/2, this.height/2, 200, this.height, 0x00, 0);
-      Phaser.Display.Align.In.Center(b1.background, menu, 0, -80);
+      let menu = this.add.rectangle(0, this.height/2 - 200, this.width, 200, 0x00, 0).setOrigin(0);
+      Phaser.Display.Align.In.LeftCenter(b1.background, menu, -200,0);
       b1.align(0, b1.offsetY*0.5);
-      Phaser.Display.Align.To.BottomCenter(b2.background, b1.background, 0, 80);
+      Phaser.Display.Align.In.RightCenter(b2.background, menu, -200,0);
       b2.align(0, b1.offsetY*0.7);
 
     }

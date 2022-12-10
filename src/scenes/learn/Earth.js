@@ -21,7 +21,7 @@ export default class EarthLevel extends Phaser.Scene{
 
     create(){
         // not using score, so no need to create scoreboard 
-        this.scene.launch('ScoreDisplay', [90, 70]).bringToTop('ScoreDisplay');
+
         // create actual background and level title text 
         new Background(this);
         new TitleText(this, 280, 'Earth', 100);
@@ -74,7 +74,7 @@ export default class EarthLevel extends Phaser.Scene{
     update(){
         if(this.questionsRemaining === 0){
             // game over. display level complete screen 
-            new LevelComplete(this, 'MainMenu');
+            new LevelComplete(this, 'MarsLevel', 'PLANET COMPLETE', 'NEXT PLANET');
             // only get in here once
             this.questionsRemaining--;
         }
