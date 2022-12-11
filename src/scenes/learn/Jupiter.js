@@ -1,4 +1,4 @@
-import { Background, DropQuestion, InfoScreen, LevelComplete, Notebook, PickOneQuestion, TextButton, TitleText } from "../../components";
+import { Background, DropQuestion, InfoScreen, LevelComplete, Notebook, PickOneQuestion, TextButton, TitleText, makeCard } from "../../components";
 
 export default class JupiterLevel extends Phaser.Scene{
     constructor(){
@@ -27,29 +27,62 @@ export default class JupiterLevel extends Phaser.Scene{
         new TitleText(this, 280, 'Jupiter', 100);
 
         // these questions will be displayed once the InfoScreen is hidden.
-        let p1 = new PickOneQuestion(this, 350, 350, 300, 240, 1, 30, 19, 
-            'Why does Earth not have many craters?', 
+        let p1 = new PickOneQuestion(this, 250, 350, 300, 0, 1, 26, 18, 
+            'Why are the 4 gas giants known as Jovian planets?', 
             [
-            'Because Plate Tectonics gets rid of them very fast', 
-            'Because Earth never gets hit by anything', 
-            'Because the Water Cycle washes them away', 
-            'Because of both Plate Tectonics and the Water Cycle'
+            'Because Jupiter is the most special gas giant', 
+            'Because Jove is the most special gas giant', 
+            'Because Jovian is another word for gas giant',
+            'Because they were discovered by someone named Jove'
             ], 
-            'Because of both Plate Tectonics and the Water Cycle'
+            'Because Jupiter is the most special gas giant'
             );
         p1.enable();
         this.questionsRemaining++;
 
-        let p2 = new PickOneQuestion(this, 850, 350, 300, 20, 1, 29, 30, 
-            'Earth is the only planet with liquid water', 
+        let p2 = new PickOneQuestion(this, 600, 350, 300, 0, 1, 26, 19, 
+            'What is the Great Red Spot?', 
             [
-            'True', 
-            'False', 
+            'A 300 year old hurricane', 
+            'A giant hole in Jupiter', 
+            'A part of Jupiter\'s special liquid metallic hydrogen layer'
             ], 
-            'False'
+            'A 300 year old hurricane'
             );
         p2.enable();
         this.questionsRemaining++;
+
+        let p3 = new PickOneQuestion(this, 950, 350, 300, 1, 0, 28, 19, 
+            'Which one of these planets is the hottest?', 
+            [
+            'Mercury', 
+            'Jupiter', 
+            'Mars'
+            ], 
+            'Mercury'
+            );
+        p3.enable();
+        this.questionsRemaining++;
+
+        // create starcards for drop questions 
+        // let c1 = makeCard(this, 163, 560, 'Mercury');
+        // c1.enable(true, () => {});
+        // let c2 = makeCard(this, 288, 560, 'Venus');
+        // c2.enable(true, () => {});
+        // let c3 = makeCard(this, 413, 560, 'Earth');
+        // c3.enable(true, () => {});
+        // let c4 = makeCard(this, 538, 560, 'Mars');
+        // c4.enable(true, () => {});
+
+        // let c5 = makeCard(this, 662, 560, 'Jupiter');
+        // c5.enable(true, () => {});
+        // let c6 = makeCard(this, 787, 560, 'Saturn');
+        // c6.enable(true, () => {});
+        // let c7 = makeCard(this, 912, 560, 'Uranus');
+        // c7.enable(true, () => {});
+        // let c8 = makeCard(this, 1033, 560, 'Neptune');
+        // c8.enable(true, () => {});
+        
 
         let checker = new TextButton(this, 600, 660, -1, 400, 80, 0x00, 1, 40, 'GBD_w', 'CHECK ANSWERS');
         checker.align();
@@ -57,7 +90,7 @@ export default class JupiterLevel extends Phaser.Scene{
             () => {
                 if(p1.checkResults()) this.questionsRemaining--;
                 if(p2.checkResults()) this.questionsRemaining--;
-                // if(p3.checkResults()) this.questionsRemaining--;
+                if(p3.checkResults()) this.questionsRemaining--;
             },
             () => checker.text.setFont('GBD_c'),
             () => checker.text.setFont('GBD_w')

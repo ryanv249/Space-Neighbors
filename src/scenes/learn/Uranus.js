@@ -1,4 +1,4 @@
-import { Background, DropQuestion, InfoScreen, LevelComplete, Notebook, PickOneQuestion, TextButton, TitleText } from "../../components";
+import { Background, DropQuestion, InfoScreen, LevelComplete, Notebook, PickOneQuestion, TextButton, TitleText, makeCard } from "../../components";
 
 export default class UranusLevel extends Phaser.Scene{
     constructor(){
@@ -27,29 +27,42 @@ export default class UranusLevel extends Phaser.Scene{
         new TitleText(this, 280, 'Uranus', 100);
 
         // these questions will be displayed once the InfoScreen is hidden.
-        let p1 = new PickOneQuestion(this, 350, 350, 300, 240, 1, 30, 19, 
-            'Why does Earth not have many craters?', 
+        let p1 = new PickOneQuestion(this, 250, 350, 300, 24, 1, 30, 25, 
+            'What is Uranus\'s angle of rotation?', 
             [
-            'Because Plate Tectonics gets rid of them very fast', 
-            'Because Earth never gets hit by anything', 
-            'Because the Water Cycle washes them away', 
-            'Because of both Plate Tectonics and the Water Cycle'
+            '23.5 degrees', 
+            '28 degrees', 
+            '98 degrees', 
+            '0 degrees'
             ], 
-            'Because of both Plate Tectonics and the Water Cycle'
+            '98 degrees'
             );
         p1.enable();
         this.questionsRemaining++;
 
-        let p2 = new PickOneQuestion(this, 850, 350, 300, 20, 1, 29, 30, 
-            'Earth is the only planet with liquid water', 
+        let p2 = new PickOneQuestion(this, 600, 350, 300, 20, 1, 29, 30, 
+            'Is there a big difference between summer and winter on Uranus?', 
             [
-            'True', 
-            'False', 
+            'No', 
+            'Yes', 
             ], 
-            'False'
+            'No'
             );
         p2.enable();
         this.questionsRemaining++;
+
+        let p3 = new PickOneQuestion(this, 950, 350, 300, 1, 1, 32, 25, 
+            'Why are Uranus\'s rings dark?', 
+            [
+            'They are made of dark chemicals', 
+            'Uranus doesn\'t have rings',
+            'Uranus is very far from the Sun'
+            ], 
+            'Uranus is very far from the Sun'
+            );
+        p3.enable();
+        this.questionsRemaining++;
+
 
         let checker = new TextButton(this, 600, 660, -1, 400, 80, 0x00, 1, 40, 'GBD_w', 'CHECK ANSWERS');
         checker.align();
@@ -57,7 +70,7 @@ export default class UranusLevel extends Phaser.Scene{
             () => {
                 if(p1.checkResults()) this.questionsRemaining--;
                 if(p2.checkResults()) this.questionsRemaining--;
-                // if(p3.checkResults()) this.questionsRemaining--;
+                if(p3.checkResults()) this.questionsRemaining--;
             },
             () => checker.text.setFont('GBD_c'),
             () => checker.text.setFont('GBD_w')

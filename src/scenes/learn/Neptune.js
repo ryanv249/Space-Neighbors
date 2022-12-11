@@ -1,4 +1,4 @@
-import { Background, DropQuestion, InfoScreen, LevelComplete, Notebook, PickOneQuestion, TextButton, TitleText } from "../../components";
+import { Background, DropQuestion, InfoScreen, LevelComplete, Notebook, PickOneQuestion, TextButton, TitleText, makeCard } from "../../components";
 
 export default class NeptuneLevel extends Phaser.Scene{
     constructor(){
@@ -27,28 +27,42 @@ export default class NeptuneLevel extends Phaser.Scene{
         new TitleText(this, 280, 'Neptune', 100);
 
         // these questions will be displayed once the InfoScreen is hidden.
-        let p1 = new PickOneQuestion(this, 350, 350, 300, 240, 1, 30, 19, 
-            'Why does Earth not have many craters?', 
+        let p1 = new PickOneQuestion(this, 250, 350, 300, 0, 1, 26, 19, 
+            'Why is Neptune blue?', 
             [
-            'Because Plate Tectonics gets rid of them very fast', 
-            'Because Earth never gets hit by anything', 
-            'Because the Water Cycle washes them away', 
-            'Because of both Plate Tectonics and the Water Cycle'
+            'There are so many diamonds in the atmosphere', 
+            'The atmosphere has a lot of methane in it', 
+            'It only receives 3% of the sunlight that Jupiter receives',
             ], 
-            'Because of both Plate Tectonics and the Water Cycle'
+            'The atmosphere has a lot of methane in it'
             );
         p1.enable();
         this.questionsRemaining++;
 
-        let p2 = new PickOneQuestion(this, 850, 350, 300, 20, 1, 29, 30, 
-            'Earth is the only planet with liquid water', 
+        let p2 = new PickOneQuestion(this, 600, 350, 300, 0, 0, 26, 19, 
+            'Which planet has the fastest winds?', 
             [
-            'True', 
-            'False', 
+            'Neptune', 
+            'Uranus', 
+            'Jupiter',
+            'Saturn'
             ], 
-            'False'
+            'Neptune'
             );
         p2.enable();
+        this.questionsRemaining++;
+
+        let p3 = new PickOneQuestion(this, 950, 350, 300, 0, 1, 26, 30, 
+            'When did we get our first good look at Neptune?', 
+            [
+            '1300', 
+            '1960', 
+            '1865',
+            '1989'
+            ], 
+            '1989'
+            );
+        p3.enable();
         this.questionsRemaining++;
 
         let checker = new TextButton(this, 600, 660, -1, 400, 80, 0x00, 1, 40, 'GBD_w', 'CHECK ANSWERS');
@@ -57,7 +71,7 @@ export default class NeptuneLevel extends Phaser.Scene{
             () => {
                 if(p1.checkResults()) this.questionsRemaining--;
                 if(p2.checkResults()) this.questionsRemaining--;
-                // if(p3.checkResults()) this.questionsRemaining--;
+                if(p3.checkResults()) this.questionsRemaining--;
             },
             () => checker.text.setFont('GBD_c'),
             () => checker.text.setFont('GBD_w')

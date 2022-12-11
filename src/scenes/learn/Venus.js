@@ -27,28 +27,41 @@ export default class VenusLevel extends Phaser.Scene{
         new TitleText(this, 280, 'Venus', 100);
 
         // these questions will be displayed once the InfoScreen is hidden.
-        let p1 = new PickOneQuestion(this, 350, 350, 300, 240, 1, 30, 19, 
-            'Why does Earth not have many craters?', 
+        let p1 = new PickOneQuestion(this, 250, 350, 300, 0, 1, 30, 21, 
+            'Why does Venus not have Plate Tectonics?', 
             [
-            'Because Plate Tectonics gets rid of them very fast', 
-            'Because Earth never gets hit by anything', 
-            'Because the Water Cycle washes them away', 
-            'Because of both Plate Tectonics and the Water Cycle'
+            'Because Plate Tectonics will only ever be possible on Earth', 
+            'Because Venus\'s crust is too thick', 
+            'Because Venus is too dry',
+            'Because Venus is too hot'
             ], 
-            'Because of both Plate Tectonics and the Water Cycle'
+            'Because Venus is too dry'
             );
         p1.enable();
         this.questionsRemaining++;
 
-        let p2 = new PickOneQuestion(this, 850, 350, 300, 20, 1, 29, 30, 
-            'Earth is the only planet with liquid water', 
+        let p2 = new PickOneQuestion(this, 600, 350, 300, 0, 1, 29, 21, 
+            'Why is Venus so hot?', 
             [
-            'True', 
+            'Because the atmosphere traps heat very well', 
+            'Because the atmosphere is super dense',
+            'Because there are many volcanoes',
+            'Because it is the closest planet to the Sun'
+            ], 
+            'Because the atmosphere traps heat very well'
+            );
+        p2.enable();
+        this.questionsRemaining++;
+
+        let p3 = new PickOneQuestion(this, 950, 350, 300, 0, 1, 28, 30, 
+            'Olympus Mons is the tallest volcano on Venus', 
+            [
             'False', 
+            'True',  
             ], 
             'False'
             );
-        p2.enable();
+        p3.enable();
         this.questionsRemaining++;
 
         let checker = new TextButton(this, 600, 660, -1, 400, 80, 0x00, 1, 40, 'GBD_w', 'CHECK ANSWERS');
@@ -57,7 +70,7 @@ export default class VenusLevel extends Phaser.Scene{
             () => {
                 if(p1.checkResults()) this.questionsRemaining--;
                 if(p2.checkResults()) this.questionsRemaining--;
-                // if(p3.checkResults()) this.questionsRemaining--;
+                if(p3.checkResults()) this.questionsRemaining--;
             },
             () => checker.text.setFont('GBD_c'),
             () => checker.text.setFont('GBD_w')

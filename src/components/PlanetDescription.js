@@ -190,11 +190,11 @@ export function makeDescription(scene, name, imgPos, namePos, specPos, descPos){
                     [namePos[0], namePos[1]], 'Jupiter',
                     [specPos[0], specPos[1]], '71% of planet mass',
                     [descPos[0], descPos[1]], 
-                    'Jupiter is both the largest and most massive planet. It is about 11x the size of Earth and has 2x mass of all other planets combined. ' +
+                    'Jupiter is both the largest and most massive planet. It is about 11x the size of Earth and has 2x the mass of all other planets combined. ' +
                     'The 4 rocky planets are known as Terrestrial Planets because Terra is another name for Earth. We call them that because Earth is the most special rocky planet. ' +
                     'Similarly the 4 gas giant planets are known as Jovian Planets because Jove is another name for Jupiter and Jupiter is the most special one. ' + 
-                    'One reason for this is that Jupiter has the largest satelite system. It even has moons which are tectonically active and some which might have subsurface water!\n\n' +
-                    'Like all gas giants Jupiter is a literal planet of storms. The Great Red Spot is a massive hurricane which has lasted for over 300 years! ' +
+                    'One reason for this is that Jupiter has the largest and most diverse satelite system which contains the largest moon Ganymede! \n\n' +
+                    'Like all gas giants Jupiter is a literal planet of storms.\nThe Great Red Spot is a massive hurricane which has lasted for over 300 years!' +
                     'Jupiter has lightning that is much stronger than Earth\'s but it is actually rarer. In fact Jupiter doesn\'t even have the most intense winds in the system! \n\n' +
                     'Jupiter has a very strong magnetic field due to a layer of liquid "metallic"\nhydrogren near its core. Basically Jupiter is so massive that the atmospheric pressure near the core is enough to force gases into a weird sludge-like state which conducts electricity super well!'
                     );
@@ -221,7 +221,7 @@ export function makeDescription(scene, name, imgPos, namePos, specPos, descPos){
                     [descPos[0], descPos[1]], 
                     'Uranus\'s most unique attribute is its axis of rotation. Earth rotates at an angle of about 23.5 degrees, with all other planets being similar (though Mercury is at 0 degrees). ' + 
                     'Uranus rotates at an angle of 98 degrees. This means that it is effectively lying on its side! ' + 
-                    'We have a couple different ideas how this happened but we aren\'t sure just yet. One possibility is some kind of impact, similar to what might\'ve happened to Mercury!\n\n' +
+                    'We have a couple different ideas about how this happened but we aren\'t sure just yet. One possibility is some kind of impact, similar to what might\'ve happened to Mercury!\n\n' +
                     'The biggest effect of this angle is that seasons on Uranus last for an extremely long time. ' +
                     'Each hemisphere (half) of Uranus will experience 20 years of summer followed by 20 years of winter! ' +
                     'Despite this, when we last measured Uranus, we found that the temperature was extremely even across the planet. It is not like Mercury which is half burning and half freezing!\n\n' + 

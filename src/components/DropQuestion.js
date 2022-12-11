@@ -8,10 +8,12 @@ export default class DropQuestion{
      * How many StarCards must be input.
      * @param {String} question 
      * The question to display on screen. 
+     * @param {number} questionSize
+     * The font size for the question. Set to -1 for default size of 15
      * @param {String[]} answers 
      * Array containing names of which StarCards are valid responses. Size must be >= numRequired.
      */
-    constructor(scene, xPos, yPos, numRequired, question, answers){
+    constructor(scene, xPos, yPos, numRequired, question, questionSize, answers){
         // store list of valid responses, number of responses required 
         this.answers = answers;
         this.numRequired = numRequired;
@@ -24,9 +26,9 @@ export default class DropQuestion{
         this.box = scene.add.rectangle(xPos, yPos, 350, 0, 0x00, 0.6);
 
         // create text
-        this.text = scene.add.bitmapText(xPos, yPos, 'PC_c', question, 15)
+        this.text = scene.add.bitmapText(xPos, yPos, 'PC_c', question, (questionSize === -1 ? 15 : questionSize))
             .setOrigin(0.5)
-            .setMaxWidth(300);
+            .setMaxWidth(330);
 
         // size box to text 
         this.box.height = this.text.height + 250;
@@ -41,7 +43,7 @@ export default class DropQuestion{
             .setOrigin(0.5);
 
         // arrange items, place into container 
-        Phaser.Display.Align.In.TopCenter(this.text, this.box, 0, -20);
+        Phaser.Display.Align.In.TopCenter(this.text, this.box, 0, -30);
         Phaser.Display.Align.In.BottomCenter(this.backDrop, this.box, 0, -20);
         Phaser.Display.Align.In.Center(this.zone, this.backDrop, 0, 0);
 
@@ -54,6 +56,7 @@ export default class DropQuestion{
 
     /**
      *  Calls setInteractive() on the zone, enabling drag hover highlight and drop
+     *  Also allows scene to watch for drag input
      *  @param {String} name 
      *  Name of container used to differentiate between DropQuestions. 
      *  Bad Things happen if non-unique names used!
@@ -61,6 +64,12 @@ export default class DropQuestion{
      enable(name){
         this.container.name = name;
         this.zone.setInteractive();
+
+        // allow things to be dragged
+        this.zone.scene.input.on('drag', function (pointer, gameObject, dragX, dragY){
+            gameObject.setX(dragX);
+            gameObject.setY(dragY);
+        }, this);
 
         // when inside dropzone, make it grey 
         this.zone.scene.input.on('dragenter', function(pointer, gameObject, dropZone){

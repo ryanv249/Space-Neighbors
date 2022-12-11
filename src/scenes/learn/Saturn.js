@@ -1,4 +1,4 @@
-import { Background, DropQuestion, InfoScreen, LevelComplete, Notebook, PickOneQuestion, TextButton, TitleText } from "../../components";
+import { Background, DropQuestion, InfoScreen, LevelComplete, Notebook, PickOneQuestion, TextButton, TitleText, makeCard } from "../../components";
 
 export default class SaturnLevel extends Phaser.Scene{
     constructor(){
@@ -27,28 +27,41 @@ export default class SaturnLevel extends Phaser.Scene{
         new TitleText(this, 280, 'Saturn', 100);
 
         // these questions will be displayed once the InfoScreen is hidden.
-        let p1 = new PickOneQuestion(this, 350, 350, 300, 240, 1, 30, 19, 
-            'Why does Earth not have many craters?', 
+        let p1 = new PickOneQuestion(this, 250, 350, 300, 0, 1, 28, 20, 
+            'Why is Saturn the most oblate planet?', 
             [
-            'Because Plate Tectonics gets rid of them very fast', 
-            'Because Earth never gets hit by anything', 
-            'Because the Water Cycle washes them away', 
-            'Because of both Plate Tectonics and the Water Cycle'
+            'Because the gravity of its rings stretches it out', 
+            'Because it has 12-hour days', 
+            'Because it is spinning very fast',
+            'Because it receives less energy from the Sun'
             ], 
-            'Because of both Plate Tectonics and the Water Cycle'
+            'Because it is spinning very fast'
             );
         p1.enable();
         this.questionsRemaining++;
 
-        let p2 = new PickOneQuestion(this, 850, 350, 300, 20, 1, 29, 30, 
-            'Earth is the only planet with liquid water', 
+        let p2 = new PickOneQuestion(this, 600, 350, 300, 0, 1, 26, 30, 
+            'Saturn is the only planet with rings in the system.', 
             [
-            'True', 
             'False', 
+            'True'
             ], 
             'False'
             );
         p2.enable();
+        this.questionsRemaining++;
+
+        let p3 = new PickOneQuestion(this, 950, 350, 300, 1, 1, 30, 20, 
+            'What is Titan?', 
+            [
+            'The largest moon in the system', 
+            'A moon of Saturn', 
+            'The name for Saturn\'s rings',
+            'Another name for Saturn'
+            ], 
+            'A moon of Saturn'
+            );
+        p3.enable();
         this.questionsRemaining++;
 
         let checker = new TextButton(this, 600, 660, -1, 400, 80, 0x00, 1, 40, 'GBD_w', 'CHECK ANSWERS');
@@ -57,7 +70,7 @@ export default class SaturnLevel extends Phaser.Scene{
             () => {
                 if(p1.checkResults()) this.questionsRemaining--;
                 if(p2.checkResults()) this.questionsRemaining--;
-                // if(p3.checkResults()) this.questionsRemaining--;
+                if(p3.checkResults()) this.questionsRemaining--;
             },
             () => checker.text.setFont('GBD_c'),
             () => checker.text.setFont('GBD_w')

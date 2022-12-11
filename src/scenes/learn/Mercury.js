@@ -1,4 +1,4 @@
-import { Background, DropQuestion, InfoScreen, LevelComplete, Notebook, PickOneQuestion, TextButton, TitleText } from "../../components";
+import { Background, DropQuestion, InfoScreen, LevelComplete, makeCard, Notebook, PickOneQuestion, TextButton, TitleText } from "../../components";
 
 export default class MercuryLevel extends Phaser.Scene{
     constructor(){
@@ -27,29 +27,61 @@ export default class MercuryLevel extends Phaser.Scene{
         new TitleText(this, 280, 'Mercury', 100);
 
         // these questions will be displayed once the InfoScreen is hidden.
-        let p1 = new PickOneQuestion(this, 350, 350, 300, 240, 1, 30, 19, 
-            'Why does Earth not have many craters?', 
+        let p1 = new PickOneQuestion(this, 225, 350, 300, 0, 1, 26, 19, 
+            'What is the Caloris Basin?', 
             [
-            'Because Plate Tectonics gets rid of them very fast', 
-            'Because Earth never gets hit by anything', 
-            'Because the Water Cycle washes them away', 
-            'Because of both Plate Tectonics and the Water Cycle'
+            'The asteroid which struck Mercury', 
+            'A special spot on Mercury where there is never sunlight', 
+            'The hole left by the asteroid which hit Mercury',
+            'The cracks and wrinkles caused by the asteroid impact'
             ], 
-            'Because of both Plate Tectonics and the Water Cycle'
+            'The hole left by the asteroid which hit Mercury'
             );
         p1.enable();
         this.questionsRemaining++;
 
-        let p2 = new PickOneQuestion(this, 850, 350, 300, 20, 1, 29, 30, 
-            'Earth is the only planet with liquid water', 
-            [
-            'True', 
-            'False', 
-            ], 
-            'False'
+        let p2 = new DropQuestion(this, 575, 350, 2,
+            'What are the two smallest planets?', 22, 
+            ['Mars', 'Mercury']
             );
-        p2.enable();
+        p2.enable('p2');
         this.questionsRemaining++;
+
+        let p3 = new DropQuestion(this, 950, 350, 2,
+            'What are the two sister planets?', 23,
+            ['Earth', 'Venus']
+            );
+        p3.enable('p3');
+        this.questionsRemaining++;
+
+        // create starcards for drop questions 
+        let c1 = makeCard(this, 413, 560, 'Mercury');
+        c1.enable(true, () => {});
+        let c2 = makeCard(this, 538, 560, 'Venus');
+        c2.enable(true, () => {});
+        let c3 = makeCard(this, 662, 560, 'Earth');
+        c3.enable(true, () => {});
+        let c4 = makeCard(this, 787, 560, 'Mars');
+        c4.enable(true, () => {});
+
+        // let c1 = makeCard(this, 163, 560, 'Mercury');
+        // c1.enable(true, () => {});
+        // let c2 = makeCard(this, 288, 560, 'Venus');
+        // c2.enable(true, () => {});
+        // let c3 = makeCard(this, 413, 560, 'Earth');
+        // c3.enable(true, () => {});
+        // let c4 = makeCard(this, 538, 560, 'Mars');
+        // c4.enable(true, () => {});
+
+        // let c5 = makeCard(this, 662, 560, 'Jupiter');
+        // c5.enable(true, () => {});
+        // let c6 = makeCard(this, 787, 560, 'Saturn');
+        // c6.enable(true, () => {});
+        // let c7 = makeCard(this, 912, 560, 'Uranus');
+        // c7.enable(true, () => {});
+        // let c8 = makeCard(this, 1033, 560, 'Neptune');
+        // c8.enable(true, () => {});
+        
 
         let checker = new TextButton(this, 600, 660, -1, 400, 80, 0x00, 1, 40, 'GBD_w', 'CHECK ANSWERS');
         checker.align();
@@ -57,7 +89,7 @@ export default class MercuryLevel extends Phaser.Scene{
             () => {
                 if(p1.checkResults()) this.questionsRemaining--;
                 if(p2.checkResults()) this.questionsRemaining--;
-                // if(p3.checkResults()) this.questionsRemaining--;
+                if(p3.checkResults()) this.questionsRemaining--;
             },
             () => checker.text.setFont('GBD_c'),
             () => checker.text.setFont('GBD_w')

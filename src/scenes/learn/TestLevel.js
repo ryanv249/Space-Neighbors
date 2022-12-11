@@ -20,13 +20,13 @@ export default class TestLevel extends Phaser.Scene{
         new Background(this);
         new TitleText(this, 280,  'Level 0: The Void', 70);
 
-        const q1 = new DropQuestion(this, 300, 300, 3, 'hello there. this is a real question. answer well!', ['Earth', 'Saturn', 'Venus']);
+        const q1 = new DropQuestion(this, 300, 300, 3, 'hello there. this is a real question. answer well!', -1,  ['Earth', 'Saturn', 'Venus']);
         q1.enable('q1');
 
-        // const q2 = new DropQuestion(this, 700, 300, 4, 'hey hey hey hey question 2!!!!', ['Uranus', 'Mars', 'Mercury', 'Neptune']);
+        // const q2 = new DropQuestion(this, 700, 300, 4, 'hey hey hey hey question 2!!!!', -1, ['Uranus', 'Mars', 'Mercury', 'Neptune']);
         // q2.enable('q2');
 
-        // const q3 = new DropQuestion(this, 900, 300, 1, 'hwoifehowfeiuewheuihiewkf !!!!', ['Jupiter']);
+        // const q3 = new DropQuestion(this, 900, 300, 1, 'hwoifehowfeiuewheuihiewkf !!!!', -1, ['Jupiter']);
         // q3.enable('q3');
 
 
