@@ -2,7 +2,8 @@ import Phaser from 'phaser';
 
 import {
     Preloader, MainMenu, TestLevel, ScoreDisplay,
-    EarthLevel, MarsLevel, VenusLevel, MercuryLevel, JupiterLevel, SaturnLevel, UranusLevel, NeptuneLevel
+    EarthLevel, MarsLevel, VenusLevel, MercuryLevel, JupiterLevel, SaturnLevel, UranusLevel, NeptuneLevel,
+    Level1, Level2, Level3, Level4, Level5
 } from "./scenes/";
 
 var config = {
@@ -19,7 +20,8 @@ var config = {
     scene: 
     [ 
         Preloader, MainMenu, ScoreDisplay, TestLevel,
-        EarthLevel, MarsLevel, VenusLevel, MercuryLevel, JupiterLevel, SaturnLevel, UranusLevel, NeptuneLevel
+        EarthLevel, MarsLevel, VenusLevel, MercuryLevel, JupiterLevel, SaturnLevel, UranusLevel, NeptuneLevel,
+        Level1, Level2, Level3, Level4, Level5
     ]
 };
 

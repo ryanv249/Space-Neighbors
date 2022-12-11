@@ -35,7 +35,7 @@ export default class MainMenu extends Phaser.Scene {
 
       const b2 = new TextButton(this, 0, 0, -1, -1, -1, 0x8D4DE2, 1, 80, 'GBD_b', 'Quiz');
       b2.enable( 
-        () => this.scene.start('TestLevel'),
+        () => this.scene.start('Level1'),
         () => b2.background.setFillStyle(0x409BE5),
         () => b2.background.setFillStyle(0x8D4DE2)
         );

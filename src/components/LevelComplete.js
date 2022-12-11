@@ -13,7 +13,7 @@ export default class LevelComplete{
      */
     constructor(scene, nextLevel, completeMessage, levelMessage){
         // make it extra obvious the level is over while also eating input (to prevent opening notebook) 
-        this.background = scene.add.rectangle(0,0, scene.width, scene.height, 0x00, 0.5).setOrigin(0).setInteractive();
+        scene.add.rectangle(0,0, scene.width, scene.height, 0x00, 0.5).setOrigin(0).setInteractive();
 
         // level complete message (want green background)
         this.message = new TextButton(scene, 600, 200, -1, -1, -1, 0x2FC325, 1, 100, 'GBD_b', (completeMessage === undefined ? 'Level Complete' : completeMessage));
@@ -22,6 +22,13 @@ export default class LevelComplete{
         // next level button 
         this.button = new TextButton(scene, 600, 660, 400, 400, 80, 0x00, 1, 40, 'GBD_w', (levelMessage === undefined ? 'NEXT LEVEL' : levelMessage));
         this.button.align();
+
+        // if this is the end of the quiz, add score info
+        if(completeMessage === 'QUIZ COMPLETE'){
+            // hardcode total number of points here
+            let scoreScreen = new TextButton(scene, 600, 400, -1, -1, -1, 0x2FC325, 1, 100, 'GBD_b', scene.score + ' / 31');
+            scoreScreen.align();
+        } 
         
         // setup button 
         this.button.enable(

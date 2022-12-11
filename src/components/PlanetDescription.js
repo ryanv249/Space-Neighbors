@@ -194,7 +194,7 @@ export function makeDescription(scene, name, imgPos, namePos, specPos, descPos){
                     'The 4 rocky planets are known as Terrestrial Planets because Terra is another name for Earth. We call them that because Earth is the most special rocky planet. ' +
                     'Similarly the 4 gas giant planets are known as Jovian Planets because Jove is another name for Jupiter and Jupiter is the most special one. ' + 
                     'One reason for this is that Jupiter has the largest and most diverse satelite system which contains the largest moon Ganymede! \n\n' +
-                    'Like all gas giants Jupiter is a literal planet of storms.\nThe Great Red Spot is a massive hurricane which has lasted for over 300 years!' +
+                    'Like all gas giants Jupiter is a literal planet of storms.\nThe Great Red Spot is a massive hurricane which has lasted for over 300 years! ' +
                     'Jupiter has lightning that is much stronger than Earth\'s but it is actually rarer. In fact Jupiter doesn\'t even have the most intense winds in the system! \n\n' +
                     'Jupiter has a very strong magnetic field due to a layer of liquid "metallic"\nhydrogren near its core. Basically Jupiter is so massive that the atmospheric pressure near the core is enough to force gases into a weird sludge-like state which conducts electricity super well!'
                     );
@@ -206,7 +206,7 @@ export function makeDescription(scene, name, imgPos, namePos, specPos, descPos){
                     [specPos[0], specPos[1]], 'Awesome Rings',
                     [descPos[0], descPos[1]], 
                     'Saturn is the second largest planet but despite its size it is actually the least dense planet. Saturn would literally float in water! ' +
-                    'It is also the most oblate (stretched out) gas giant. It is 10x the size of Earth but only has a 12 Earth-hour day! It is spinning incredibly fast.\n\n' + 
+                    'It is also the most oblate (stretched out) gas giant. It is 10x the size of Earth but only has a 10.5 Earth-hour day! It is spinning incredibly fast.\n\n' + 
                     'Saturn is similar to Jupiter in several ways. They have similar atmospheres, storms which last for hundreds of years, and Saturn even has a similar "sludge" layer. ' + 
                     'However since Saturn is further from the Sun it is less colorful due to receiving less energy (causing fewer of the reactions which produce the color).\n\n' + 
                     'Saturn\'s most unique feature is its remarkable ring system. They are by far the brightest in the system and consist of objects of a wide range of sizes. ' +
